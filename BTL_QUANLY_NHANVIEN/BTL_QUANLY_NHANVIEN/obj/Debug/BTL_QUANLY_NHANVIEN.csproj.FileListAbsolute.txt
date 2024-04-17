@@ -1,0 +1,42 @@
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\BTL_QUANLY_NHANVIEN.exe.config
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\BTL_QUANLY_NHANVIEN.exe
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\BTL_QUANLY_NHANVIEN.pdb
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\Guna.UI2.dll
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.AssemblyReference.cache
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Login.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Properties.Resources.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.GenerateResource.cache
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.CoreCompileInputs.cache
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.CopyComplete
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.exe
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.pdb
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Forgot_password.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Register.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Home.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Chucvu.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.HopDongLaoDong.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Luong.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.PhongBan.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.TrinhDoHocVan.resources
+C:\Users\THANH AN PC\source\repos\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.NhanVien.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\BTL_QUANLY_NHANVIEN.exe.config
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\BTL_QUANLY_NHANVIEN.exe
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\BTL_QUANLY_NHANVIEN.pdb
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\bin\Debug\Guna.UI2.dll
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.AssemblyReference.cache
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Chucvu.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Forgot_password.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Home.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.HopDongLaoDong.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Login.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Luong.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.NhanVien.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.PhongBan.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Properties.Resources.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.Register.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.TrinhDoHocVan.resources
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.GenerateResource.cache
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.CoreCompileInputs.cache
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.CopyComplete
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.exe
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.pdb
