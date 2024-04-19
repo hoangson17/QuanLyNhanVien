@@ -26,7 +26,7 @@ namespace BTL_QUANLY_NHANVIEN
         }
         private DataProvider() { }
 
-        public string connectionString = @"Data Source=DESKTOP-S7AOFL6\SQLEXPRESS;Initial Catalog=quanliNS;Integrated Security=True";
+        public string connectionString = @"Data Source=DESKTOP-S7AOFL6\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
         public DataTable ExcuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();

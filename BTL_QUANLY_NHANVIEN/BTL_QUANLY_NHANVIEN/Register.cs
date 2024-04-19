@@ -71,7 +71,7 @@ namespace BTL_QUANLY_NHANVIEN
             }
             try
             {
-                string query = "INSERT INTO NHANVIEN(MaNV,TenNV,Email,Taikhoan,Matkhau) VALUES (@MaNV, @TenNV, @Email, @Taikhoan, @Matkhau)";
+                string query = "INSERT INTO NHANVIEN(MaNV,Hoten,Email,Taikhoan,Matkhau) VALUES (@MaNV, @Hoten, @Email, @Taikhoan, @Matkhau)";
                 object[] parameter = new object[] { manv,hoten,email,tentk,matkhau};
                 DataProvider.Instance.ExcuteNonQuery(query, parameter);
                 MessageBox.Show("Đăng kí thành công !!! ");

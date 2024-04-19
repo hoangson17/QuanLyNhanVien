@@ -62,7 +62,7 @@ namespace BTL_QUANLY_NHANVIEN
                 string maTDHV = DataProvider.Instance.GenerateId(queryCountId, "TD");
 
                 // Thực hiện câu truy vấn INSERT
-                string query = "INSERT INTO TRINHDOHOCVAN(MaTDHV, TenTDHV, Chuyennganh) VALUES (@MaTDHV, @TenTDHV, @Chuyennganh)";
+                string query = "INSERT INTO TRINHDOHOCVAN(MaTDHV, TDHV, CNganh) VALUES (@MaTDHV, @TDHV, @CNganh)";
                 object[] parameter_TDHV = new object[] { maTDHV, tenTDHV, chuyennganh };
                 DataProvider.Instance.ExcuteNonQuery(query, parameter_TDHV);
 
@@ -105,7 +105,7 @@ namespace BTL_QUANLY_NHANVIEN
             try
             {
                 // Thực hiện câu truy vấn UPDATE
-                string query = "UPDATE TRINHDOHOCVAN SET TenTDHV = @TenTDHV, Chuyennganh = @Chuyennganh WHERE MaTDHV = @MaTDHV";
+                string query = "UPDATE TRINHDOHOCVAN SET TDHV = @TDHV, CNganh = @CNganh WHERE MaTDHV = @MaTDHV";
                 object[] parameters = new object[] { tenTDHV, chuyennganh, maTDHV };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
                 // Cập nhật DataGridView với dữ liệu mới

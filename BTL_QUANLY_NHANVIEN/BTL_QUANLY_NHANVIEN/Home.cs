@@ -118,7 +118,7 @@ namespace BTL_QUANLY_NHANVIEN
             }
             if (cbx_timkiem.Text == "Lương")
             {
-                data.DataSource = modify.XemDL("select * from LUONG where LUONG like '%" + txt_timkiem.Text.Trim() + "%'");
+                data.DataSource = modify.XemDL("select * from LUONG where Bacluong like '%" + txt_timkiem.Text.Trim() + "%'");
             }
             if (cbx_timkiem.Text == "Phòng Ban")
             {

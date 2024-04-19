@@ -51,8 +51,8 @@ namespace BTL_QUANLY_NHANVIEN
                 string maPB = DataProvider.Instance.GenerateId(queryCountId, "PB");
 
                 // Thực hiện câu truy vấn INSERT
-                string query = "INSERT INTO PHONGBAN(MaPB, TenPB, DiachiPB, SDTPB) VALUES (@MaPB, @TenPB, @DiachiPB, @SDTPB)";
-                object[] parameter_PB = new object[] { maPB,tenPB,diachi,sdt };
+                string query = "INSERT INTO PHONGBAN(MaPB, TenPB, SDTPB, Diachi) VALUES (@MaPB, @TenPB, @SDTPB, @Diachi)";
+                object[] parameter_PB = new object[] { maPB,tenPB,sdt,diachi };
                 DataProvider.Instance.ExcuteNonQuery(query, parameter_PB);
 
                 // Cập nhật DataGridView với dữ liệu mới
@@ -78,8 +78,8 @@ namespace BTL_QUANLY_NHANVIEN
             i = guna2DataGridView1.CurrentRow.Index;
             txt_maPB.Text = guna2DataGridView1.Rows[i].Cells[0].Value.ToString();
             txt_tenPB.Text = guna2DataGridView1.Rows[i].Cells[1].Value.ToString();
-            txt_diachi.Text = guna2DataGridView1.Rows[i].Cells[2].Value.ToString();
-            txt_sdt.Text = guna2DataGridView1.Rows[i].Cells[3].Value.ToString();
+            txt_diachi.Text = guna2DataGridView1.Rows[i].Cells[3].Value.ToString();
+            txt_sdt.Text = guna2DataGridView1.Rows[i].Cells[2].Value.ToString();
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -109,8 +109,8 @@ namespace BTL_QUANLY_NHANVIEN
             try
             {
                 // Thực hiện câu truy vấn UPDATE
-                string query = "UPDATE PHONGBAN SET TenPB = @TenPB, DiachiPB = @DiachiPB, SDTPB = @SDTPB WHERE MaPB = @MaPB";
-                object[] parameters = new object[] { tenPB, diachi, sdt, maPB };
+                string query = "UPDATE PHONGBAN SET TenPB = @TenPB, SDTPB = @SDTPB, Diachi = @Diachi WHERE MaPB = @MaPB";
+                object[] parameters = new object[] { tenPB, sdt,diachi, maPB };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
 
                 // Cập nhật DataGridView với dữ liệu mới

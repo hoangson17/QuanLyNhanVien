@@ -9,7 +9,7 @@ namespace BTL_QUANLY_NHANVIEN
 {
     internal class Connection
     {
-        private static string stringConnection = @"Data Source=DESKTOP-S7AOFL6\SQLEXPRESS;Initial Catalog=quanliNS;Integrated Security=True";
+        private static string stringConnection = @"Data Source=DESKTOP-S7AOFL6\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=True";
         public static SqlConnection GetSqlConnection()
         {
             return new SqlConnection(stringConnection);
