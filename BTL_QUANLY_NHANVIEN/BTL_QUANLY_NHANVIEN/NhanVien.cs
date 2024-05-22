@@ -17,6 +17,63 @@ namespace BTL_QUANLY_NHANVIEN
             InitializeComponent();
         }
         Modify modify = new Modify();
+        DataTable DataUI = new DataTable();
+
+        private void addColumnsName()
+        {
+            DataUI.Columns.Add("MaNV", typeof(string));
+            DataUI.Columns.Add("Hoten", typeof(string));
+            DataUI.Columns.Add("SDT", typeof(string));
+            DataUI.Columns.Add("Gioitinh", typeof(string));
+            DataUI.Columns.Add("NgaySinh", typeof(DateTime));
+            DataUI.Columns.Add("Dantoc", typeof(string));
+            DataUI.Columns.Add("Quequan", typeof(string));
+            DataUI.Columns.Add("Email", typeof(string));
+            DataUI.Columns.Add("Taikhoan", typeof(string));
+            DataUI.Columns.Add("Matkhau", typeof(string));
+            DataUI.Columns.Add("MaCV", typeof(string));
+            DataUI.Columns.Add("MaPB", typeof(string));
+            DataUI.Columns.Add("MaTDHV", typeof(string));
+            DataUI.Columns.Add("MaLuong", typeof(string));
+            DataUI.Columns.Add("TongLuong", typeof (float));
+        }
+
+
+        private void loadDataTb()
+        {
+            String queryNhanVien = "select * from NHANVIEN";
+            String queryLuong = "select TongLuong from LUONG";
+
+            DataTable DtNhanVien = DataProvider.Instance.ExcuteQuery(queryNhanVien);
+            DataTable DtLuong = DataProvider.Instance.ExcuteQuery(queryLuong);
+
+            for (int i = 0; i < DtNhanVien.Rows.Count; i++)
+            {
+                DataRow newRow = DataUI.NewRow();
+                newRow["MaNV"] = DtNhanVien.Rows[i]["MaNV"];
+                newRow["Hoten"] = DtNhanVien.Rows[i]["Hoten"];
+                newRow["SDT"] = DtNhanVien.Rows[i]["SDT"];
+                newRow["Gioitinh"] = DtNhanVien.Rows[i]["Gioitinh"];
+                newRow["NgaySinh"] = DtNhanVien.Rows[i]["NgaySinh"];
+                newRow["Dantoc"] = DtNhanVien.Rows[i]["Dantoc"];
+                newRow["Quequan"] = DtNhanVien.Rows[i]["Quequan"];
+                newRow["Email"] = DtNhanVien.Rows[i]["Email"];
+                newRow["Taikhoan"] = DtNhanVien.Rows[i]["Taikhoan"];
+                newRow["Matkhau"] = DtNhanVien.Rows[i]["Matkhau"];
+                newRow["MaCV"] = DtNhanVien.Rows[i]["MaCV"];
+                newRow["MaPB"] = DtNhanVien.Rows[i]["MaPB"];
+                newRow["MaTDHV"] = DtNhanVien.Rows[i]["MaTDHV"];
+                newRow["MaLuong"] = DtNhanVien.Rows[i]["MaLuong"];
+                newRow["TongLuong"] = DtLuong.Rows[i]["TongLuong"];
+                DataUI.Rows.Add(newRow);
+            }
+            
+            
+
+            guna2DataGridView1.DataSource = DataUI;
+        }
+
+
         private void NhanVien_Load(object sender, EventArgs e)
         {
             
@@ -25,12 +82,15 @@ namespace BTL_QUANLY_NHANVIEN
             modify = new Modify();
             try
             {
-                guna2DataGridView1.DataSource = modify.getAllNhanvien();
+                // guna2DataGridView1.DataSource = modify.getAllNhanvien();
+                addColumnsName();
+                loadDataTb();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             addDataMcv();
             addDataMTDHV();
             addDatamaluong();
@@ -89,7 +149,7 @@ namespace BTL_QUANLY_NHANVIEN
             {
                 string queryCountId = "SELECT COUNT(*) FROM NHANVIEN WHERE MaNV = @MaNV";
                 string manv = DataProvider.Instance.GenerateId(queryCountId, "NV");
-                string query = "INSERT INTO NHANVIEN(MaNV, Hoten, SDT, Gioitinh, NgaySinh, Dantoc, Quequan, Email, Taikhoan, Matkhau, MaCV, MaPB, MaTDHV, Bacluong) VALUES (@MaNV, @Hoten, @SDT, @Gioitinh, @NgaySinh, @Dantoc, @Quequan, @Email,@Taikhoan, @Matkhau, @MaCV, @MaPB, @MaTDHV, @MaLuong)";
+                string query = "INSERT INTO NHANVIEN(MaNV, Hoten, SDT, Gioitinh, NgaySinh, Dantoc, Quequan, Email, Taikhoan, Matkhau, MaCV, MaPB, MaTDHV, MaLuong) VALUES (@MaNV, @Hoten, @SDT, @Gioitinh, @NgaySinh, @Dantoc, @Quequan, @Email,@Taikhoan, @Matkhau, @MaCV, @MaPB, @MaTDHV, @MaLuong)";
                 object[] parameter = new object[] {manv,tennv,sdt,gioitinh,ngaysinh,dantoc,quequan,email,tk,mk,mcv,mpb,tdhv,ml  };
                 DataProvider.Instance.ExcuteNonQuery(query, parameter);
                 guna2DataGridView1.DataSource = modify.getAllNhanvien();
