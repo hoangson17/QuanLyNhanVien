@@ -177,7 +177,7 @@
             this.btn_xoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_xoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_xoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_xoa.FillColor = System.Drawing.Color.DimGray;
+            this.btn_xoa.FillColor = System.Drawing.Color.Navy;
             this.btn_xoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_xoa.ForeColor = System.Drawing.Color.White;
             this.btn_xoa.Location = new System.Drawing.Point(992, 541);
@@ -194,7 +194,7 @@
             this.btn_sua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_sua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_sua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_sua.FillColor = System.Drawing.Color.DimGray;
+            this.btn_sua.FillColor = System.Drawing.Color.Navy;
             this.btn_sua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_sua.ForeColor = System.Drawing.Color.White;
             this.btn_sua.Location = new System.Drawing.Point(559, 541);
@@ -211,7 +211,7 @@
             this.btn_them.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btn_them.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btn_them.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_them.FillColor = System.Drawing.Color.DimGray;
+            this.btn_them.FillColor = System.Drawing.Color.Navy;
             this.btn_them.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_them.ForeColor = System.Drawing.Color.White;
             this.btn_them.Location = new System.Drawing.Point(119, 541);
@@ -224,7 +224,7 @@
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.Controls.Add(this.guna2DataGridView1);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.DimGray;
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Navy;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.guna2GroupBox1.Location = new System.Drawing.Point(62, 37);
@@ -239,14 +239,15 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(255)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -255,8 +256,8 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(255)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;

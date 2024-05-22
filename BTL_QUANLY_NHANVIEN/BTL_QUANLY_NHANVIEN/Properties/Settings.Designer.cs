@@ -68,5 +68,16 @@ namespace BTL_QUANLY_NHANVIEN.Properties {
                 return ((string)(this["quanliNSConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-S7AOFL6\\SQLEXPRESS;Initial Catalog=QLNS;Integrated Security=T" +
+            "rue")]
+        public string QLNSConnectionString {
+            get {
+                return ((string)(this["QLNSConnectionString"]));
+            }
+        }
     }
 }

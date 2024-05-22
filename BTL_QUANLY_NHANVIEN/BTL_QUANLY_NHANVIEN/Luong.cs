@@ -32,7 +32,7 @@ namespace BTL_QUANLY_NHANVIEN
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            string bl = cbx_bacluong.SelectedItem.ToString();
+            string maluong = txt_MaLuong.Text;
             string lcb = txt_luongcb.Text;
             string hsl = txt_hsLuong.Text;
             string hspc = txt_hsphucap.Text;
@@ -41,33 +41,24 @@ namespace BTL_QUANLY_NHANVIEN
             {
                 try
                 {
-
-
-                    // Kiểm tra dữ liệu có hợp lệ không (ví dụ: không rỗng)
-                    if (string.IsNullOrWhiteSpace(bl) || string.IsNullOrWhiteSpace(lcb) || string.IsNullOrWhiteSpace(hsl) || string.IsNullOrWhiteSpace(hspc) || string.IsNullOrWhiteSpace(snc.ToString()))
+                    if (string.IsNullOrWhiteSpace(maluong) || string.IsNullOrWhiteSpace(lcb) || string.IsNullOrWhiteSpace(hsl) || string.IsNullOrWhiteSpace(hspc) || string.IsNullOrWhiteSpace(snc.ToString()))
                     {
                         MessageBox.Show("Vui lòng nhập đủ thông tin.");
                         return;
                     }
-                    // Thực hiện câu truy vấn INSERT
-                    string query = "INSERT INTO LUONG(Bacluong, LuongCB, HSLuong, HSPC,Songaycong) VALUES (@Bacluong, @LuongCB, @HSLuong, @HSPC,@Songaycong)";
-                    object[] parameter_L = new object[] { bl, lcb, hsl, hspc, snc };
+                    string query = "INSERT INTO LUONG(MaLuong, LuongCB, HSLuong, HSPC,Songaycong) VALUES (MaLuong, @LuongCB, @HSLuong, @HSPC,@Songaycong)";
+                    object[] parameter_L = new object[] { maluong, lcb, hsl, hspc, snc };
                     DataProvider.Instance.ExcuteNonQuery(query, parameter_L);
-
-                    // Cập nhật DataGridView với dữ liệu mới
                     guna2DataGridView1.DataSource = modify.getAllLUONG();
-
-                    // Hiển thị thông báo thành công
                     MessageBox.Show("Thêm bản ghi thành công.");
                     txt_hsLuong.Clear();
                     txt_hsphucap.Clear();
                     txt_luongcb.Clear();
                     txt_ngaycong.Clear();
-                    cbx_bacluong.SelectedIndex = -1;
+                    txt_MaLuong.Clear();
                 }
                 catch (Exception ex)
                 {
-                    // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                     MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
                 }
             }
@@ -79,11 +70,13 @@ namespace BTL_QUANLY_NHANVIEN
 
         }
 
+
+
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int i;
             i = guna2DataGridView1.CurrentRow.Index;
-            cbx_bacluong.Text = guna2DataGridView1.Rows[i].Cells[0].Value.ToString();
+            txt_MaLuong.Text = guna2DataGridView1.Rows[i].Cells[0].Value.ToString();
             txt_luongcb.Text = guna2DataGridView1.Rows[i].Cells[1].Value.ToString();
             txt_hsLuong.Text = guna2DataGridView1.Rows[i].Cells[2].Value.ToString();
             txt_hsphucap.Text = guna2DataGridView1.Rows[i].Cells[3].Value.ToString();
@@ -97,15 +90,12 @@ namespace BTL_QUANLY_NHANVIEN
                 return;
             }
 
-            // Lấy thông tin của dòng được chọn từ DataGridView
-            string bacLuong = guna2DataGridView1.SelectedRows[0].Cells["Bacluong"].Value.ToString();
+            string maluong = guna2DataGridView1.SelectedRows[0].Cells["Bacluong"].Value.ToString();
             string lcb = txt_luongcb.Text;
             string hsl = txt_hsLuong.Text;
             string hspc = txt_hsphucap.Text;
             int snc = Int32.Parse(txt_ngaycong.Text);
-
-            // Kiểm tra dữ liệu có hợp lệ không (ví dụ: không rỗng)
-            if (string.IsNullOrWhiteSpace(bacLuong) || string.IsNullOrWhiteSpace(lcb) || string.IsNullOrWhiteSpace(hsl) || string.IsNullOrWhiteSpace(hspc)|| string.IsNullOrWhiteSpace(snc.ToString()))
+            if (string.IsNullOrWhiteSpace(maluong) || string.IsNullOrWhiteSpace(lcb) || string.IsNullOrWhiteSpace(hsl) || string.IsNullOrWhiteSpace(hspc)|| string.IsNullOrWhiteSpace(snc.ToString()))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
                 return;
@@ -114,8 +104,8 @@ namespace BTL_QUANLY_NHANVIEN
             try
             {
                 // Thực hiện câu truy vấn UPDATE
-                string query = "UPDATE LUONG SET LuongCB = @LuongCB, HSLuong = @HSLuong, HSPC = @HSPC,Songaycong = @Songaycong WHERE Bacluong = @Bacluong";
-                object[] parameters = new object[] { lcb, hsl, hspc,snc, bacLuong };
+                string query = "UPDATE LUONG SET LuongCB = @LuongCB, HSLuong = @HSLuong, HSPC = @HSPC,Songaycong = @Songaycong WHERE Bacluong = @MacLuong";
+                object[] parameters = new object[] { lcb, hsl, hspc,snc, maluong };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
 
                 // Cập nhật DataGridView với dữ liệu mới
@@ -127,7 +117,7 @@ namespace BTL_QUANLY_NHANVIEN
                 txt_hsphucap.Clear();
                 txt_luongcb.Clear();
                 txt_ngaycong.Clear();
-                cbx_bacluong.SelectedIndex = -1;
+                txt_MaLuong.Clear();
             }
             catch (Exception ex)
             {
@@ -168,13 +158,18 @@ namespace BTL_QUANLY_NHANVIEN
                 txt_hsLuong.Clear();
                 txt_hsphucap.Clear();
                 txt_luongcb.Clear();
-                cbx_bacluong.SelectedIndex = -1;
+                txt_MaLuong.Clear();
             }
             catch (Exception ex)
             {
                 // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
+        }
+
+        private void cbx_bacluong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -158,42 +158,7 @@ namespace BTL_QUANLY_NHANVIEN
 
             return dataTable;
         }
-        /*public bool insert(Nhanvien nhanvien)
-        {
-            string query = "INSERT INTO NHANVIEN (MaNV, TenNV, DanToc, Gioitinh, Ngaysinh, Quequan, SDTNV, MaCV, MaTDHV, Bacluong, MaPB, Email, TaiKhoan, MatKhau) " +
-                            "VALUES (@MaNV, @TenNV, @DanToc, @Gioitinh, @NgaySinh, @QueQuan, @SDTNV, @MaCV, @MaTDHV, @Bacluong, @MaPB, @Email, @TaiKhoan, @MatKhau)";
-            try
-            {
-                using (var connection = Connection.GetSqlConnection())
-                using (var command = new SqlCommand(query, connection))
-                {
-                    connection.Open();
-                    command.Parameters.AddWithValue("@MaNV", nhanvien.MaNV1);
-                    command.Parameters.AddWithValue("@TenNV", nhanvien.TenNV1);
-                    command.Parameters.AddWithValue("@DanToc", nhanvien.DanToc1);
-                    command.Parameters.AddWithValue("@GioiTinh", nhanvien.GioiTinh1);
-                    command.Parameters.AddWithValue("@NgaySinh", nhanvien.NgaySinh1);
-                    command.Parameters.AddWithValue("@QueQuan", nhanvien.QueQuan1);
-                    command.Parameters.AddWithValue("@SDTNV", nhanvien.SDT1);
-                    command.Parameters.AddWithValue("@MaCV", nhanvien.MaCV1);
-                    command.Parameters.AddWithValue("@MaTDHV", nhanvien.MaTDHV1);
-                    command.Parameters.AddWithValue("@Bacluong", nhanvien.BacLuong1);
-                    command.Parameters.AddWithValue("@MaPB", nhanvien.MaPB1);
-                    command.Parameters.AddWithValue("@Email", nhanvien.Email1);
-                    command.Parameters.AddWithValue("@TaiKhoan", nhanvien.TaiKhoan1);
-                    command.Parameters.AddWithValue("@MatKhau", nhanvien.MatKhau1);
-                    command.ExecuteNonQuery();
-                }
-                return true;
-            }
-            catch (Exception ex)
-            {
-                // Xử lý lỗi cụ thể và ghi nhật ký hoặc thông báo lỗi
-                Console.WriteLine("Lỗi khi thêm nhân viên: " + ex.Message);
-                return false;
-            }
-
-        }*/
+        
 
     }
 }

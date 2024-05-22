@@ -64,48 +64,31 @@ namespace BTL_QUANLY_NHANVIEN
             string maNV = txt_manv.Text;
             try
             {
-                // Tạo ID mới cho bản ghi
                 string queryCountId = "SELECT COUNT(*) FROM HOPDONGLAODONG WHERE MaHD = @MaHD";
                 string maHD = DataProvider.Instance.GenerateId(queryCountId, "HD");
-                // Thực hiện câu truy vấn INSERT
                 string query = "INSERT INTO HOPDONGLAODONG(MaHD,MaNV, Ngayvao, Ngayra) VALUES (@MaHD,@MaNV, @Ngayvao, @Ngayra)";
                 object[] parameters = new object[] { maHD,maNV,nv,nr };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllHDLD();
-
-                // Hiển thị thông báo thành công
                 MessageBox.Show("Thêm bản ghi thành công.");
-
-                // Xóa dữ liệu đã nhập sau khi thêm thành công
-
-                //   cbx_maCV.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-
-            // Check if a row is selected
             if (guna2DataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để sửa.");
                 return;
             }
-
-            // Get the information of the selected row from DataGridView
             string maHD = guna2DataGridView1.SelectedRows[0].Cells["MaHD"].Value.ToString();
             string maNV = txt_manv.Text;
             DateTime ngayVao = dt_ngayvao.Value;
             DateTime ngayRa = dt_ngayra.Value;
-
-            // Validate the input data
             if (string.IsNullOrWhiteSpace(maNV))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
@@ -114,67 +97,43 @@ namespace BTL_QUANLY_NHANVIEN
 
             try
             {
-                // Perform the UPDATE query
                 string query = "UPDATE HOPDONGLAODONG SET MaNV = @MaNV, Ngayvao = @Ngayvao, Ngayra = @Ngayra WHERE MaHD = @MaHD";
                 object[] parameters = new object[] { maNV, ngayVao, ngayRa, maHD };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
-                // Update the DataGridView with the new data
                 guna2DataGridView1.DataSource = modify.getAllHDLD();
-
-                // Show a success message
                 MessageBox.Show("Sửa bản ghi thành công.");
-
-                // Clear the input fields and reset the selection
                 txt_manv.Clear();
-                dt_ngayvao.Value = DateTime.Now; // Reset to current date
-                dt_ngayra.Value = DateTime.Now; // Reset to current date
+                dt_ngayvao.Value = DateTime.Now; 
+                dt_ngayra.Value = DateTime.Now; 
             }
             catch (Exception ex)
             {
-                // Show an error message if an error occurs
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-
-            // Check if a row is selected
             if (guna2DataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xóa.");
                 return;
             }
-
-            // Display a confirmation dialog
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
                 return;
 
             try
             {
-                // Get the MaHD of the selected record to delete
                 string maHD = guna2DataGridView1.SelectedRows[0].Cells["MaHD"].Value.ToString();
-
-                // Construct the delete query
                 string query = "DELETE FROM HOPDONGLAODONG WHERE MaHD = @MaHD";
-
-                // Set up the parameters for the query
                 object[] parameters = new object[] { maHD };
-
-                // Execute the delete query
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
-                // Refresh the DataGridView with the updated data
                 guna2DataGridView1.DataSource = modify.getAllHDLD();
-
-                // Show a success message
                 MessageBox.Show("Xóa bản ghi thành công.");
             }
             catch (Exception ex)
             {
-                // Show an error message if an error occurs
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }

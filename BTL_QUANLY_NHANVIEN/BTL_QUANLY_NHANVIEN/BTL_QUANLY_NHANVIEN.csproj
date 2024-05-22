@@ -121,6 +121,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLNSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLNSDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +175,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -182,6 +193,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLNSDataSet.xsc">
+      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSDataSet.xss">
+      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet1.xsc">
+      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSDataSet1.xss">
+      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -197,6 +230,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lovepik_com-450044673-Vector Home Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
