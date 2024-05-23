@@ -121,16 +121,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLNSDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLNSDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,28 +183,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLNSDataSet.xsc">
-      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLNSDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLNSDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLNSDataSet.xss">
-      <DependentUpon>QLNSDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLNSDataSet1.xsc">
-      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="QLNSDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLNSDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLNSDataSet1.xss">
-      <DependentUpon>QLNSDataSet1.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

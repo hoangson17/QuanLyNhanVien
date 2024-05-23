@@ -67,9 +67,13 @@
             this.cbx_mapb = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txt_mk = new Guna.UI2.WinForms.Guna2TextBox();
+            this.nHANVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+           
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
+
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Button3
@@ -601,6 +605,19 @@
             this.txt_mk.Size = new System.Drawing.Size(206, 36);
             this.txt_mk.TabIndex = 53;
             // 
+            // qLNSDataSet
+            // 
+
+            // 
+            // nHANVIENBindingSource1
+            // 
+            this.nHANVIENBindingSource1.DataMember = "NHANVIEN";
+
+            // 
+            // nHANVIENTableAdapter
+            // 
+
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -646,6 +663,8 @@
             this.guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
+
+            ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -704,5 +723,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maTDHVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bacluongDataGridViewTextBoxColumn;
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler2;
+        private System.Windows.Forms.BindingSource nHANVIENBindingSource1;
     }
 }

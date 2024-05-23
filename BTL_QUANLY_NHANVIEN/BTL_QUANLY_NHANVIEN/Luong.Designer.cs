@@ -61,7 +61,7 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1176, 344);
             this.guna2GroupBox1.TabIndex = 1;
-            this.guna2GroupBox1.Text = "Trình Độ Học Vấn";
+            this.guna2GroupBox1.Text = "Lương";
             // 
             // guna2DataGridView1
             // 
@@ -328,6 +328,7 @@
             this.txt_MaLuong.Name = "txt_MaLuong";
             this.txt_MaLuong.PasswordChar = '\0';
             this.txt_MaLuong.PlaceholderText = "";
+            this.txt_MaLuong.ReadOnly = true;
             this.txt_MaLuong.SelectedText = "";
             this.txt_MaLuong.Size = new System.Drawing.Size(206, 48);
             this.txt_MaLuong.TabIndex = 17;

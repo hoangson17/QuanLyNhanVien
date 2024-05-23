@@ -32,25 +32,36 @@ namespace BTL_QUANLY_NHANVIEN
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            string maluong = txt_MaLuong.Text;
             string lcb = txt_luongcb.Text;
             string hsl = txt_hsLuong.Text;
             string hspc = txt_hsphucap.Text;
             int snc;
-            if(int.TryParse(this.txt_ngaycong.Text, out snc))
+            if (int.TryParse(this.txt_ngaycong.Text, out snc))
             {
                 try
                 {
-                    if (string.IsNullOrWhiteSpace(maluong) || string.IsNullOrWhiteSpace(lcb) || string.IsNullOrWhiteSpace(hsl) || string.IsNullOrWhiteSpace(hspc) || string.IsNullOrWhiteSpace(snc.ToString()))
+                    string queryCountId = "SELECT COUNT(*) FROM LUONG WHERE MaLuong = @MaLuong";
+                    string maluong = DataProvider.Instance.GenerateId(queryCountId, "NV"); 
+                    if (string.IsNullOrWhiteSpace(maluong) || string.IsNullOrWhiteSpace(lcb) || string.IsNullOrWhiteSpace(hsl) || string.IsNullOrWhiteSpace(hspc) || snc <= 0)
                     {
                         MessageBox.Show("Vui lòng nhập đủ thông tin.");
                         return;
                     }
-                    string query = "INSERT INTO LUONG(MaLuong, LuongCB, HSLuong, HSPC,Songaycong) VALUES (MaLuong, @LuongCB, @HSLuong, @HSPC,@Songaycong)";
-                    object[] parameter_L = new object[] { maluong, lcb, hsl, hspc, snc };
+                    decimal luongCB, hsLuong, hsPC;
+                    if (!decimal.TryParse(lcb, out luongCB) || !decimal.TryParse(hsl, out hsLuong) || !decimal.TryParse(hspc, out hsPC))
+                    {
+                        MessageBox.Show("Vui lòng nhập đúng định dạng số cho lương cơ bản, hệ số lương và hệ số phụ cấp.");
+                        return;
+                    }
+                    decimal tl = luongCB * hsLuong * snc + hsPC;
+
+                    string query = "INSERT INTO LUONG(MaLuong, LuongCB, HSLuong, HSPC, Songaycong, TongLuong) VALUES (@MaLuong, @LuongCB, @HSLuong, @HSPC, @Songaycong, @TongLuong)";
+                    object[] parameter_L = new object[] { maluong, luongCB, hsLuong, hsPC, snc, tl };
                     DataProvider.Instance.ExcuteNonQuery(query, parameter_L);
+         
                     guna2DataGridView1.DataSource = modify.getAllLUONG();
                     MessageBox.Show("Thêm bản ghi thành công.");
+
                     txt_hsLuong.Clear();
                     txt_hsphucap.Clear();
                     txt_luongcb.Clear();
@@ -64,7 +75,7 @@ namespace BTL_QUANLY_NHANVIEN
             }
             else
             {
-                MessageBox.Show("Lỗi " + "Nhập số nguyên cho ngày công ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Nhập số nguyên cho ngày công.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
@@ -80,6 +91,7 @@ namespace BTL_QUANLY_NHANVIEN
             txt_luongcb.Text = guna2DataGridView1.Rows[i].Cells[1].Value.ToString();
             txt_hsLuong.Text = guna2DataGridView1.Rows[i].Cells[2].Value.ToString();
             txt_hsphucap.Text = guna2DataGridView1.Rows[i].Cells[3].Value.ToString();
+            txt_ngaycong.Text = guna2DataGridView1.Rows[i].Cells[4].Value.ToString();
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
@@ -90,7 +102,7 @@ namespace BTL_QUANLY_NHANVIEN
                 return;
             }
 
-            string maluong = guna2DataGridView1.SelectedRows[0].Cells["Bacluong"].Value.ToString();
+            string maluong = guna2DataGridView1.SelectedRows[0].Cells["MaLuong"].Value.ToString();
             string lcb = txt_luongcb.Text;
             string hsl = txt_hsLuong.Text;
             string hspc = txt_hsphucap.Text;
@@ -103,15 +115,10 @@ namespace BTL_QUANLY_NHANVIEN
 
             try
             {
-                // Thực hiện câu truy vấn UPDATE
-                string query = "UPDATE LUONG SET LuongCB = @LuongCB, HSLuong = @HSLuong, HSPC = @HSPC,Songaycong = @Songaycong WHERE Bacluong = @MacLuong";
+                string query = "UPDATE LUONG SET LuongCB = @LuongCB, HSLuong = @HSLuong, HSPC = @HSPC,Songaycong = @Songaycong WHERE MaLuong = @MaLuong";
                 object[] parameters = new object[] { lcb, hsl, hspc,snc, maluong };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllLUONG();
-
-                // Hiển thị thông báo sửa thành công
                 MessageBox.Show("Sửa bản ghi thành công.");
                 txt_hsLuong.Clear();
                 txt_hsphucap.Clear();
@@ -121,39 +128,28 @@ namespace BTL_QUANLY_NHANVIEN
             }
             catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem người dùng đã chọn một dòng để xóa chưa
             if (guna2DataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xóa.");
                 return;
             }
-
-            // Hiển thị hộp thoại xác nhận xóa
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
                 return;
 
             try
             {
-                // Lấy ID của bản ghi được chọn từ DataGridView
                 string maLuong = guna2DataGridView1.SelectedRows[0].Cells[0].Value.ToString(); 
-
-                // Thực hiện câu truy vấn DELETE
-                string query = "DELETE FROM LUONG WHERE Bacluong = @Bacluong";
+                string query = "DELETE FROM LUONG WHERE MaLuong = @MaLuong";
                 object[] parameters = new object[] { maLuong };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllLUONG();
-
-                // Hiển thị thông báo xóa thành công
                 MessageBox.Show("Xóa bản ghi thành công.");
                 txt_hsLuong.Clear();
                 txt_hsphucap.Clear();
@@ -162,7 +158,6 @@ namespace BTL_QUANLY_NHANVIEN
             }
             catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }

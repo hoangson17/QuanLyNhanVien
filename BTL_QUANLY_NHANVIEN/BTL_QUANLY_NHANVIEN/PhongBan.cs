@@ -32,12 +32,9 @@ namespace BTL_QUANLY_NHANVIEN
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            // Lấy dữ liệu từ các ô văn bản
             string tenPB = txt_tenPB.Text;
             string diachi = txt_diachi.Text;
             string sdt = txt_sdt.Text;
-
-            // Kiểm tra dữ liệu có hợp lệ không (ví dụ: không rỗng)
             if (string.IsNullOrWhiteSpace(tenPB) || string.IsNullOrWhiteSpace(diachi) || string.IsNullOrWhiteSpace(sdt))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
@@ -46,19 +43,12 @@ namespace BTL_QUANLY_NHANVIEN
 
             try
             {
-                // Tạo ID mới cho bản ghi
                 string queryCountId = "SELECT COUNT(*) FROM PHONGBAN WHERE MaPB = @MaPB";
                 string maPB = DataProvider.Instance.GenerateId(queryCountId, "PB");
-
-                // Thực hiện câu truy vấn INSERT
                 string query = "INSERT INTO PHONGBAN(MaPB, TenPB, SDTPB, Diachi) VALUES (@MaPB, @TenPB, @SDTPB, @Diachi)";
                 object[] parameter_PB = new object[] { maPB,tenPB,sdt,diachi };
                 DataProvider.Instance.ExcuteNonQuery(query, parameter_PB);
-
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllPHONGBAN();
-
-                // Hiển thị thông báo thành công
                 MessageBox.Show("Thêm bản ghi thành công.");
                 txt_maPB.Clear();
                 txt_tenPB.Clear();
@@ -67,7 +57,6 @@ namespace BTL_QUANLY_NHANVIEN
             }
             catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
@@ -84,22 +73,15 @@ namespace BTL_QUANLY_NHANVIEN
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem người dùng đã chọn một dòng để sửa chưa
             if (guna2DataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để sửa.");
                 return;
             }
-
-            // Lấy ID của dòng được chọn từ DataGridView
             string maPB = guna2DataGridView1.SelectedRows[0].Cells["MaPB"].Value.ToString(); // Giả sử cột MaPB chứa ID
-
-            // Lấy thông tin mới từ các ô văn bản
             string tenPB = txt_tenPB.Text;
             string diachi = txt_diachi.Text;
             string sdt = txt_sdt.Text;
-
-            // Kiểm tra dữ liệu có hợp lệ không (ví dụ: không rỗng)
             if (string.IsNullOrWhiteSpace(tenPB) || string.IsNullOrWhiteSpace(diachi) || string.IsNullOrWhiteSpace(sdt))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
@@ -108,57 +90,40 @@ namespace BTL_QUANLY_NHANVIEN
 
             try
             {
-                // Thực hiện câu truy vấn UPDATE
                 string query = "UPDATE PHONGBAN SET TenPB = @TenPB, SDTPB = @SDTPB, Diachi = @Diachi WHERE MaPB = @MaPB";
                 object[] parameters = new object[] { tenPB, sdt,diachi, maPB };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllPHONGBAN();
-
-                // Hiển thị thông báo sửa thành công
                 MessageBox.Show("Sửa bản ghi thành công.");
             }
             catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem người dùng đã chọn một dòng để xóa chưa
             if (guna2DataGridView1.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Vui lòng chọn một dòng để xóa.");
                 return;
             }
-
-            // Hiển thị hộp thoại xác nhận xóa
             DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa bản ghi này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
                 return;
 
             try
             {
-                // Lấy ID của bản ghi được chọn từ DataGridView
                 string maPB = guna2DataGridView1.SelectedRows[0].Cells["MaPB"].Value.ToString(); // Giả sử cột MaPB chứa ID
-
-                // Thực hiện câu truy vấn DELETE
                 string query = "DELETE FROM PHONGBAN WHERE MaPB = @MaPB";
                 object[] parameters = new object[] { maPB };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllPHONGBAN();
-
-                // Hiển thị thông báo xóa thành công
                 MessageBox.Show("Xóa bản ghi thành công.");
             }
             catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
         }

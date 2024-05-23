@@ -71,14 +71,14 @@ namespace BTL_QUANLY_NHANVIEN
             
 
             guna2DataGridView1.DataSource = DataUI;
+            guna2DataGridView1.Columns["Matkhau"].Visible = false;
+            guna2DataGridView1.Columns["Taikhoan"].Visible = false;
         }
 
 
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            
-
-
+   
             modify = new Modify();
             try
             {

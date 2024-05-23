@@ -112,13 +112,13 @@ namespace BTL_QUANLY_NHANVIEN
             {
                 data.DataSource = modify.XemDL("select * from CHUCVU where MaCV like '%" + txt_timkiem.Text.Trim() + "%'");
             }
-            if (cbx_timkiem.Text == "Hợp Đồng Lao Động")
+            if (cbx_timkiem.Text == "Hợp Đồng")
             {
-                data.DataSource = modify.XemDL("select * from HOPDONGLAODONG where MaNV like '%" + txt_timkiem.Text.Trim() + "%'");
+                data.DataSource = modify.XemDL("select * from HOPDONGLAODONG where MaHD like '%" + txt_timkiem.Text.Trim() + "%'");
             }
             if (cbx_timkiem.Text == "Lương")
             {
-                data.DataSource = modify.XemDL("select * from LUONG where Bacluong like '%" + txt_timkiem.Text.Trim() + "%'");
+                data.DataSource = modify.XemDL("select * from LUONG where MaLuong like '%" + txt_timkiem.Text.Trim() + "%'");
             }
             if (cbx_timkiem.Text == "Phòng Ban")
             {
@@ -136,6 +136,11 @@ namespace BTL_QUANLY_NHANVIEN
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txt_timkiem_TextChanged(object sender, EventArgs e)
         {
 
         }

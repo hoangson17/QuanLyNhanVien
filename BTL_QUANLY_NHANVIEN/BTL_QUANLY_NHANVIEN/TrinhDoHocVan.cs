@@ -43,12 +43,8 @@ namespace BTL_QUANLY_NHANVIEN
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            
-            // Lấy dữ liệu từ các ô văn bản
             string tenTDHV = txt_tentdhv.Text;
             string chuyennganh = txt_chuyennganh.Text;
-
-            // Kiểm tra dữ liệu có hợp lệ không (ví dụ: không rỗng)
             if (string.IsNullOrWhiteSpace(tenTDHV) || string.IsNullOrWhiteSpace(chuyennganh))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
@@ -57,19 +53,12 @@ namespace BTL_QUANLY_NHANVIEN
 
             try
             {
-                // Tạo ID mới cho bản ghi
                 string queryCountId = "SELECT COUNT(*) FROM TRINHDOHOCVAN WHERE MaTDHV = @MaTDHV";
                 string maTDHV = DataProvider.Instance.GenerateId(queryCountId, "TD");
-
-                // Thực hiện câu truy vấn INSERT
                 string query = "INSERT INTO TRINHDOHOCVAN(MaTDHV, TDHV, CNganh) VALUES (@MaTDHV, @TDHV, @CNganh)";
                 object[] parameter_TDHV = new object[] { maTDHV, tenTDHV, chuyennganh };
                 DataProvider.Instance.ExcuteNonQuery(query, parameter_TDHV);
-
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllTDHV();
-
-                // Hiển thị thông báo thành công
                 MessageBox.Show("Thêm bản ghi thành công.");
                 txt_matdhv.Clear();
                 txt_tentdhv.Clear();
@@ -77,7 +66,6 @@ namespace BTL_QUANLY_NHANVIEN
             }
             catch (Exception ex)
             {
-                // Hiển thị thông báo lỗi nếu có lỗi xảy ra
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
 
@@ -91,11 +79,10 @@ namespace BTL_QUANLY_NHANVIEN
                 return;
             }
             DataGridViewRow selectedRow = guna2DataGridView1.SelectedRows[0];
-            string maTDHV = selectedRow.Cells["MaTDHV"].Value.ToString(); // Giả sử cột MaTDHV chứa ID
+            string maTDHV = selectedRow.Cells["MaTDHV"].Value.ToString();
             string tenTDHV = txt_tentdhv.Text;
             string chuyennganh = txt_chuyennganh.Text;
 
-            // Kiểm tra dữ liệu có hợp lệ không (ví dụ: không rỗng)
             if (string.IsNullOrWhiteSpace(tenTDHV) || string.IsNullOrWhiteSpace(chuyennganh))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
@@ -104,14 +91,10 @@ namespace BTL_QUANLY_NHANVIEN
 
             try
             {
-                // Thực hiện câu truy vấn UPDATE
                 string query = "UPDATE TRINHDOHOCVAN SET TDHV = @TDHV, CNganh = @CNganh WHERE MaTDHV = @MaTDHV";
                 object[] parameters = new object[] { tenTDHV, chuyennganh, maTDHV };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-                // Cập nhật DataGridView với dữ liệu mới
                 guna2DataGridView1.DataSource = modify.getAllTDHV();
-
-                // Hiển thị thông báo thành công
                 MessageBox.Show("Sửa bản ghi thành công.");
                 txt_matdhv.Clear();
                 txt_tentdhv.Clear();
