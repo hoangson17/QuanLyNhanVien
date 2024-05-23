@@ -68,11 +68,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txt_mk = new Guna.UI2.WinForms.Guna2TextBox();
             this.nHANVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-           
+            this.btn_thongke = new Guna.UI2.WinForms.Guna2Button();
+            this.lb_mkm = new System.Windows.Forms.Label();
+            this.txt_mkMoi = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).BeginInit();
-
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +87,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Navy;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(1056, 519);
+            this.guna2Button3.Location = new System.Drawing.Point(1056, 474);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(180, 45);
             this.guna2Button3.TabIndex = 16;
@@ -103,7 +104,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Navy;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(1056, 416);
+            this.guna2Button2.Location = new System.Drawing.Point(1056, 392);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 15;
@@ -469,7 +470,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(52, 548);
+            this.label13.Location = new System.Drawing.Point(53, 537);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 16);
             this.label13.TabIndex = 47;
@@ -487,7 +488,7 @@
             this.txt_tk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_tk.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_tk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_tk.Location = new System.Drawing.Point(55, 568);
+            this.txt_tk.Location = new System.Drawing.Point(56, 557);
             this.txt_tk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tk.Name = "txt_tk";
             this.txt_tk.PasswordChar = '\0';
@@ -578,7 +579,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(307, 548);
+            this.label14.Location = new System.Drawing.Point(307, 537);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(62, 16);
             this.label14.TabIndex = 54;
@@ -596,7 +597,7 @@
             this.txt_mk.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_mk.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_mk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_mk.Location = new System.Drawing.Point(310, 568);
+            this.txt_mk.Location = new System.Drawing.Point(310, 557);
             this.txt_mk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_mk.Name = "txt_mk";
             this.txt_mk.PasswordChar = '\0';
@@ -605,18 +606,56 @@
             this.txt_mk.Size = new System.Drawing.Size(206, 36);
             this.txt_mk.TabIndex = 53;
             // 
-            // qLNSDataSet
-            // 
-
-            // 
             // nHANVIENBindingSource1
             // 
             this.nHANVIENBindingSource1.DataMember = "NHANVIEN";
-
             // 
-            // nHANVIENTableAdapter
+            // btn_thongke
             // 
-
+            this.btn_thongke.BorderRadius = 17;
+            this.btn_thongke.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_thongke.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_thongke.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_thongke.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_thongke.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_thongke.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_thongke.ForeColor = System.Drawing.Color.White;
+            this.btn_thongke.Location = new System.Drawing.Point(1056, 548);
+            this.btn_thongke.Name = "btn_thongke";
+            this.btn_thongke.Size = new System.Drawing.Size(180, 45);
+            this.btn_thongke.TabIndex = 55;
+            this.btn_thongke.Text = "Xuất File Excel";
+            this.btn_thongke.Click += new System.EventHandler(this.btn_thongke_Click);
+            // 
+            // lb_mkm
+            // 
+            this.lb_mkm.AutoSize = true;
+            this.lb_mkm.Location = new System.Drawing.Point(575, 537);
+            this.lb_mkm.Name = "lb_mkm";
+            this.lb_mkm.Size = new System.Drawing.Size(87, 16);
+            this.lb_mkm.TabIndex = 57;
+            this.lb_mkm.Text = "Mật Khẩu Mới";
+            // 
+            // txt_mkMoi
+            // 
+            this.txt_mkMoi.BorderRadius = 17;
+            this.txt_mkMoi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_mkMoi.DefaultText = "";
+            this.txt_mkMoi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txt_mkMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txt_mkMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_mkMoi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txt_mkMoi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_mkMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txt_mkMoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txt_mkMoi.Location = new System.Drawing.Point(578, 557);
+            this.txt_mkMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txt_mkMoi.Name = "txt_mkMoi";
+            this.txt_mkMoi.PasswordChar = '\0';
+            this.txt_mkMoi.PlaceholderText = "";
+            this.txt_mkMoi.SelectedText = "";
+            this.txt_mkMoi.Size = new System.Drawing.Size(206, 36);
+            this.txt_mkMoi.TabIndex = 56;
             // 
             // NhanVien
             // 
@@ -624,6 +663,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1281, 632);
+            this.Controls.Add(this.lb_mkm);
+            this.Controls.Add(this.txt_mkMoi);
+            this.Controls.Add(this.btn_thongke);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txt_mk);
             this.Controls.Add(this.cbx_mapb);
@@ -663,7 +705,6 @@
             this.guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource)).EndInit();
-
             ((System.ComponentModel.ISupportInitialize)(this.nHANVIENBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -724,5 +765,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bacluongDataGridViewTextBoxColumn;
         private Guna.UI2.WinForms.Guna2DataGridViewStyler guna2DataGridViewStyler2;
         private System.Windows.Forms.BindingSource nHANVIENBindingSource1;
+        private Guna.UI2.WinForms.Guna2Button btn_thongke;
+        private System.Windows.Forms.Label lb_mkm;
+        private Guna.UI2.WinForms.Guna2TextBox txt_mkMoi;
     }
 }

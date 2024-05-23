@@ -95,8 +95,10 @@ namespace BTL_QUANLY_NHANVIEN
             addDataMTDHV();
             addDatamaluong();
             addDataPB();
+            lb_mkm.Visible = false;
+            txt_mkMoi.Visible= false;
         }
-
+        List<DataRow> removedItems = new List<DataRow>();
         private void addDataMcv()
         {
             string query = "SELECT * FROM CHUCVU ";
@@ -146,7 +148,7 @@ namespace BTL_QUANLY_NHANVIEN
                 return;
             }
             try
-            {
+            { 
                 string queryCountId = "SELECT COUNT(*) FROM NHANVIEN WHERE MaNV = @MaNV";
                 string manv = DataProvider.Instance.GenerateId(queryCountId, "NV");
                 string query = "INSERT INTO NHANVIEN(MaNV, Hoten, SDT, Gioitinh, NgaySinh, Dantoc, Quequan, Email, Taikhoan, Matkhau, MaCV, MaPB, MaTDHV, MaLuong) VALUES (@MaNV, @Hoten, @SDT, @Gioitinh, @NgaySinh, @Dantoc, @Quequan, @Email,@Taikhoan, @Matkhau, @MaCV, @MaPB, @MaTDHV, @MaLuong)";
@@ -299,6 +301,151 @@ namespace BTL_QUANLY_NHANVIEN
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
+
+
+        }
+
+        public void ExportFile(DataTable dataTable, String sheetName, String title)
+        {
+            // Tạo đối tượng excel
+            Microsoft.Office.Interop.Excel.Application oExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbooks oBooks;
+            Microsoft.Office.Interop.Excel.Sheets oSheets;
+            Microsoft.Office.Interop.Excel.Workbook oBook;
+            Microsoft.Office.Interop.Excel.Worksheet oSheet;
+
+            // Tạo mới một excel workbook
+            oExcel.Visible = true;
+            oExcel.DisplayAlerts = false;
+            oExcel.Application.SheetsInNewWorkbook = 1;
+            oBooks = oExcel.Workbooks;
+            oBook = (Microsoft.Office.Interop.Excel.Workbook)(oExcel.Workbooks.Add(Type.Missing));
+            oSheets = oBook.Worksheets;
+            oSheet = (Microsoft.Office.Interop.Excel.Worksheet)oSheets.get_Item(1);
+            oSheet.Name = sheetName;
+
+            // Tạo phần tiêu đề
+            Microsoft.Office.Interop.Excel.Range head = oSheet.get_Range("A1", "L1"); // Điều chỉnh phạm vi tiêu đề để bỏ qua cột "Tài Khoản" và "Mật Khẩu"
+            head.MergeCells = true;
+            head.Value = title;
+            head.Font.Bold = true;
+            head.Font.Name = "Times New Roman";
+            head.Font.Size = "20";
+            head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // Tạo tiêu đề cột
+            string[] columnNames = { "Mã Nhân Viên", "Họ Tên", "Số Điện Thoại", "Giới Tính", "Ngày Sinh", "Dân Tộc", "Quê Quán", "Email", "Mã Công Việc", "Mã Phòng Ban", "Mã Trình Độ", "Mã Lương" };
+            int colIndex = 1;
+            foreach (string colName in columnNames)
+            {
+                Microsoft.Office.Interop.Excel.Range col = oSheet.Cells[3, colIndex];
+                col.Value = colName;
+                col.ColumnWidth = colName == "Email" ? 30 : 12; // Thiết lập độ rộng cột "Email" là 30
+                colIndex++;
+            }
+
+            Microsoft.Office.Interop.Excel.Range rowHead = oSheet.get_Range("A3", "L3"); // Điều chỉnh phạm vi tiêu đề hàng để bỏ qua cột "Tài Khoản" và "Mật Khẩu"
+
+            // Kẻ viền
+            rowHead.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+
+            // Thiết lập màu nền
+            rowHead.Interior.ColorIndex = 6;
+            rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+
+            // Tạo mảng theo database
+            object[,] arr = new object[dataTable.Rows.Count, columnNames.Length];
+
+            // Chuyển dữ liệu từ dataTable vào mảng đối tượng, bỏ qua cột "Tài Khoản" và "Mật Khẩu"
+            for (int row = 0; row < dataTable.Rows.Count; row++)
+            {
+                DataRow dataRow = dataTable.Rows[row];
+                int colArrayIndex = 0;
+                for (int col = 0; col < dataTable.Columns.Count; col++)
+                {
+                    // Bỏ qua cột "Tài Khoản" và "Mật Khẩu" (giả sử cột "Tài Khoản" là cột thứ 9 và "Mật Khẩu" là cột thứ 10)
+                    if (col == 8 || col == 9) continue;
+                    arr[row, colArrayIndex] = dataRow[col];
+                    colArrayIndex++;
+                }
+            }
+
+            // Thiết lập vùng điền dữ liệu
+            int rowStart = 4;
+            int columnStart = 1;
+            int rowEnd = rowStart + dataTable.Rows.Count - 1;
+            int columnEnd = columnNames.Length;
+
+            // Ô bắt đầu điền dữ liệu
+            Microsoft.Office.Interop.Excel.Range c1 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowStart, columnStart];
+
+            // Ô kết thúc điền dữ liệu
+            Microsoft.Office.Interop.Excel.Range c2 = (Microsoft.Office.Interop.Excel.Range)oSheet.Cells[rowEnd, columnEnd];
+
+            // Lấy về vùng điền dữ liệu
+            Microsoft.Office.Interop.Excel.Range range = oSheet.get_Range(c1, c2);
+
+            // Điền dữ liệu vào vùng thiết lập
+            range.Value2 = arr;
+
+            // Kẻ viền
+            range.Borders.LineStyle = Microsoft.Office.Interop.Excel.Constants.xlSolid;
+
+            // Căn giữa cả bảng
+            oSheet.get_Range(c1, c2).HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+        }
+
+
+        private void btn_thongke_Click(object sender, EventArgs e)
+        {
+            // Khởi tạo dataTable
+            DataTable dataTable = new DataTable();
+
+            // Định nghĩa các cột
+            dataTable.Columns.Add(new DataColumn("MaNV"));
+            dataTable.Columns.Add(new DataColumn("Hoten"));
+            dataTable.Columns.Add(new DataColumn("SDT"));
+            dataTable.Columns.Add(new DataColumn("Gioitinh"));
+            dataTable.Columns.Add(new DataColumn("NgaySinh"));
+            dataTable.Columns.Add(new DataColumn("Dantoc"));
+            dataTable.Columns.Add(new DataColumn("Quequan"));
+            dataTable.Columns.Add(new DataColumn("Email"));
+            dataTable.Columns.Add(new DataColumn("Taikhoan"));
+            dataTable.Columns.Add(new DataColumn("Matkhau"));
+            dataTable.Columns.Add(new DataColumn("MaCV"));
+            dataTable.Columns.Add(new DataColumn("MaPB"));
+            dataTable.Columns.Add(new DataColumn("MaTDHV"));
+            dataTable.Columns.Add(new DataColumn("MaLuong"));
+
+            // Duyệt qua các hàng trong DataGridView
+            foreach (DataGridViewRow dtgvRow in guna2DataGridView1.Rows)
+            {
+                // Bỏ qua hàng mới nếu có
+                if (dtgvRow.IsNewRow) continue;
+
+                // Tạo một hàng mới trong DataTable
+                DataRow dtrow = dataTable.NewRow();
+                dtrow[0] = dtgvRow.Cells[0].Value;
+                dtrow[1] = dtgvRow.Cells[1].Value;
+                dtrow[2] = dtgvRow.Cells[2].Value;
+                dtrow[3] = dtgvRow.Cells[3].Value;
+                dtrow[4] = dtgvRow.Cells[4].Value;
+                dtrow[5] = dtgvRow.Cells[5].Value;
+                dtrow[6] = dtgvRow.Cells[6].Value;
+                dtrow[7] = dtgvRow.Cells[7].Value;
+                dtrow[8] = dtgvRow.Cells[8].Value;
+                dtrow[9] = dtgvRow.Cells[9].Value;
+                dtrow[10] = dtgvRow.Cells[10].Value;
+                dtrow[11] = dtgvRow.Cells[11].Value;
+                dtrow[12] = dtgvRow.Cells[12].Value;
+                dtrow[13] = dtgvRow.Cells[13].Value;
+
+                // Thêm hàng vào DataTable
+                dataTable.Rows.Add(dtrow);
+            }
+
+            // Xuất dữ liệu
+            ExportFile(dataTable, "Danh Sách", "DANH SÁCH NHÂN VIÊN");
         }
     }
 }
