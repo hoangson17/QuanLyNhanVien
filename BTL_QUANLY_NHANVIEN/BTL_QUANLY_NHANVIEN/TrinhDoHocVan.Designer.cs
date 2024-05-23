@@ -53,7 +53,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Navy;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(61, 31);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(61, 33);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(1176, 344);
             this.guna2GroupBox1.TabIndex = 0;
@@ -68,7 +68,6 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(168)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -140,14 +139,14 @@
             this.txt_matdhv.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_matdhv.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_matdhv.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_matdhv.Location = new System.Drawing.Point(108, 420);
+            this.txt_matdhv.Location = new System.Drawing.Point(61, 420);
             this.txt_matdhv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_matdhv.Name = "txt_matdhv";
             this.txt_matdhv.PasswordChar = '\0';
             this.txt_matdhv.PlaceholderText = "";
             this.txt_matdhv.ReadOnly = true;
             this.txt_matdhv.SelectedText = "";
-            this.txt_matdhv.Size = new System.Drawing.Size(229, 48);
+            this.txt_matdhv.Size = new System.Drawing.Size(206, 36);
             this.txt_matdhv.TabIndex = 1;
             // 
             // txt_tentdhv
@@ -162,13 +161,13 @@
             this.txt_tentdhv.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_tentdhv.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_tentdhv.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_tentdhv.Location = new System.Drawing.Point(542, 420);
+            this.txt_tentdhv.Location = new System.Drawing.Point(546, 420);
             this.txt_tentdhv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_tentdhv.Name = "txt_tentdhv";
             this.txt_tentdhv.PasswordChar = '\0';
             this.txt_tentdhv.PlaceholderText = "";
             this.txt_tentdhv.SelectedText = "";
-            this.txt_tentdhv.Size = new System.Drawing.Size(229, 48);
+            this.txt_tentdhv.Size = new System.Drawing.Size(206, 36);
             this.txt_tentdhv.TabIndex = 2;
             // 
             // txt_chuyennganh
@@ -183,13 +182,13 @@
             this.txt_chuyennganh.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_chuyennganh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_chuyennganh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_chuyennganh.Location = new System.Drawing.Point(974, 420);
+            this.txt_chuyennganh.Location = new System.Drawing.Point(1031, 420);
             this.txt_chuyennganh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_chuyennganh.Name = "txt_chuyennganh";
             this.txt_chuyennganh.PasswordChar = '\0';
             this.txt_chuyennganh.PlaceholderText = "";
             this.txt_chuyennganh.SelectedText = "";
-            this.txt_chuyennganh.Size = new System.Drawing.Size(229, 48);
+            this.txt_chuyennganh.Size = new System.Drawing.Size(206, 36);
             this.txt_chuyennganh.TabIndex = 3;
             // 
             // guna2Button1
@@ -202,7 +201,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Navy;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(138, 540);
+            this.guna2Button1.Location = new System.Drawing.Point(145, 515);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 4;
@@ -219,7 +218,7 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Navy;
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(569, 540);
+            this.guna2Button2.Location = new System.Drawing.Point(562, 515);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 5;
@@ -236,7 +235,7 @@
             this.guna2Button3.FillColor = System.Drawing.Color.Navy;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(1002, 540);
+            this.guna2Button3.Location = new System.Drawing.Point(979, 515);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(180, 45);
             this.guna2Button3.TabIndex = 6;
@@ -246,7 +245,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(105, 400);
+            this.label1.Location = new System.Drawing.Point(58, 400);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 16);
             this.label1.TabIndex = 7;
@@ -255,7 +254,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(539, 400);
+            this.label2.Location = new System.Drawing.Point(543, 400);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 16);
             this.label2.TabIndex = 8;
@@ -264,7 +263,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(971, 400);
+            this.label3.Location = new System.Drawing.Point(1028, 400);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 9;
@@ -274,6 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1281, 632);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

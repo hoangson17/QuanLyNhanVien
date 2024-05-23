@@ -68,7 +68,7 @@
             this.txt_maPB.PlaceholderText = "";
             this.txt_maPB.ReadOnly = true;
             this.txt_maPB.SelectedText = "";
-            this.txt_maPB.Size = new System.Drawing.Size(233, 52);
+            this.txt_maPB.Size = new System.Drawing.Size(206, 36);
             this.txt_maPB.TabIndex = 1;
             // 
             // txt_tenPB
@@ -89,7 +89,7 @@
             this.txt_tenPB.PasswordChar = '\0';
             this.txt_tenPB.PlaceholderText = "";
             this.txt_tenPB.SelectedText = "";
-            this.txt_tenPB.Size = new System.Drawing.Size(233, 52);
+            this.txt_tenPB.Size = new System.Drawing.Size(206, 36);
             this.txt_tenPB.TabIndex = 2;
             // 
             // txt_diachi
@@ -110,7 +110,7 @@
             this.txt_diachi.PasswordChar = '\0';
             this.txt_diachi.PlaceholderText = "";
             this.txt_diachi.SelectedText = "";
-            this.txt_diachi.Size = new System.Drawing.Size(233, 52);
+            this.txt_diachi.Size = new System.Drawing.Size(206, 36);
             this.txt_diachi.TabIndex = 3;
             // 
             // txt_sdt
@@ -131,7 +131,7 @@
             this.txt_sdt.PasswordChar = '\0';
             this.txt_sdt.PlaceholderText = "";
             this.txt_sdt.SelectedText = "";
-            this.txt_sdt.Size = new System.Drawing.Size(233, 52);
+            this.txt_sdt.Size = new System.Drawing.Size(206, 36);
             this.txt_sdt.TabIndex = 4;
             // 
             // label1
@@ -242,7 +242,6 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(172)))), ((int)(((byte)(172)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Blue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -306,6 +305,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1281, 632);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.btn_xoa);

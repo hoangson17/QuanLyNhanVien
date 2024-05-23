@@ -93,7 +93,7 @@
             this.guna2GradientButton13.FillColor2 = System.Drawing.Color.Navy;
             this.guna2GradientButton13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButton13.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2GradientButton13.Location = new System.Drawing.Point(3, 380);
+            this.guna2GradientButton13.Location = new System.Drawing.Point(3, 392);
             this.guna2GradientButton13.Name = "guna2GradientButton13";
             this.guna2GradientButton13.Size = new System.Drawing.Size(240, 77);
             this.guna2GradientButton13.TabIndex = 7;
@@ -112,7 +112,7 @@
             this.btn_phongban.FillColor2 = System.Drawing.Color.Navy;
             this.btn_phongban.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_phongban.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_phongban.Location = new System.Drawing.Point(3, 296);
+            this.btn_phongban.Location = new System.Drawing.Point(3, 314);
             this.btn_phongban.Name = "btn_phongban";
             this.btn_phongban.Size = new System.Drawing.Size(240, 78);
             this.btn_phongban.TabIndex = 6;
@@ -131,7 +131,7 @@
             this.btn_hopdong.FillColor2 = System.Drawing.Color.Navy;
             this.btn_hopdong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_hopdong.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_hopdong.Location = new System.Drawing.Point(2, 148);
+            this.btn_hopdong.Location = new System.Drawing.Point(2, 161);
             this.btn_hopdong.Name = "btn_hopdong";
             this.btn_hopdong.Size = new System.Drawing.Size(243, 79);
             this.btn_hopdong.TabIndex = 4;
@@ -150,7 +150,7 @@
             this.btn_chucvu.FillColor2 = System.Drawing.Color.Navy;
             this.btn_chucvu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_chucvu.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_chucvu.Location = new System.Drawing.Point(2, 78);
+            this.btn_chucvu.Location = new System.Drawing.Point(2, 83);
             this.btn_chucvu.Name = "btn_chucvu";
             this.btn_chucvu.Size = new System.Drawing.Size(243, 78);
             this.btn_chucvu.TabIndex = 3;
@@ -188,7 +188,7 @@
             this.btn_luong.FillColor2 = System.Drawing.Color.Navy;
             this.btn_luong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_luong.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_luong.Location = new System.Drawing.Point(-4, 216);
+            this.btn_luong.Location = new System.Drawing.Point(-4, 240);
             this.btn_luong.Name = "btn_luong";
             this.btn_luong.Size = new System.Drawing.Size(255, 74);
             this.btn_luong.TabIndex = 5;

@@ -95,8 +95,7 @@ namespace BTL_QUANLY_NHANVIEN
             addDataMTDHV();
             addDatamaluong();
             addDataPB();
-            lb_mkm.Visible = false;
-            txt_mkMoi.Visible= false;
+
         }
         List<DataRow> removedItems = new List<DataRow>();
         private void addDataMcv()

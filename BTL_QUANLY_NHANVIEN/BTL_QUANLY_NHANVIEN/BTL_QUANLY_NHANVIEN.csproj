@@ -206,5 +206,8 @@
   <ItemGroup>
     <None Include="Resources\Lovepik_com-450044673-Vector Home Icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\brg_login.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

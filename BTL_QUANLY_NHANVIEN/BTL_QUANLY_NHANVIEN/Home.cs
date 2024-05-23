@@ -107,6 +107,8 @@ namespace BTL_QUANLY_NHANVIEN
             if (cbx_timkiem.Text == "Nhân Viên")
             {
                 data.DataSource = modify.XemDL("select * from NHANVIEN where MaNV like '%" + txt_timkiem.Text.Trim() + "%'");
+                data.Columns["Matkhau"].Visible = false;
+                data.Columns["Taikhoan"].Visible = false;
             }
             if (cbx_timkiem.Text == "Chức Vụ")
             {
