@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,12 +39,11 @@ namespace BTL_QUANLY_NHANVIEN
             DataUI.Columns.Add("TongLuong", typeof (float));
         }
 
-
+        
         private void loadDataTb()
         {
             String queryNhanVien = "select * from NHANVIEN";
             String queryLuong = "select TongLuong from LUONG";
-
             DataTable DtNhanVien = DataProvider.Instance.ExcuteQuery(queryNhanVien);
             DataTable DtLuong = DataProvider.Instance.ExcuteQuery(queryLuong);
 
@@ -141,41 +141,52 @@ namespace BTL_QUANLY_NHANVIEN
             String mpb = cbx_mapb.Text;
             String tdhv = cbx_tdhv.Text;
             String ml = txt_maluong.Text;
-            if (string.IsNullOrWhiteSpace(tennv)|| string.IsNullOrWhiteSpace(sdt)|| string.IsNullOrWhiteSpace(gioitinh)|| string.IsNullOrWhiteSpace(dantoc)|| string.IsNullOrWhiteSpace(quequan) || string.IsNullOrWhiteSpace(quequan) || string.IsNullOrWhiteSpace(email)|| string.IsNullOrWhiteSpace(mk)|| string.IsNullOrWhiteSpace(tk))
+
+            if (string.IsNullOrWhiteSpace(tennv) || string.IsNullOrWhiteSpace(sdt) || string.IsNullOrWhiteSpace(gioitinh) || string.IsNullOrWhiteSpace(dantoc) || string.IsNullOrWhiteSpace(quequan) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(mk) || string.IsNullOrWhiteSpace(tk))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
                 return;
             }
+
             try
-            { 
+            {
+                // Kiểm tra xem mã lương đã tồn tại chưa
+                string queryCheckMaLuong = "SELECT MaLuong FROM NHANVIEN WHERE MaLuong = @MaLuong";
+                object[] parameterCheckMaLuong = new object[] { ml };
+                DataTable result = DataProvider.Instance.ExcuteQuery(queryCheckMaLuong, parameterCheckMaLuong);
+
+                if (result.Rows.Count > 0)
+                {
+                    MessageBox.Show("Mã lương đã tồn tại. Vui lòng nhập mã lương khác.");
+                    return;
+                }
+
                 string queryCountId = "SELECT COUNT(*) FROM NHANVIEN WHERE MaNV = @MaNV";
                 string manv = DataProvider.Instance.GenerateId(queryCountId, "NV");
                 string query = "INSERT INTO NHANVIEN(MaNV, Hoten, SDT, Gioitinh, NgaySinh, Dantoc, Quequan, Email, Taikhoan, Matkhau, MaCV, MaPB, MaTDHV, MaLuong) VALUES (@MaNV, @Hoten, @SDT, @Gioitinh, @NgaySinh, @Dantoc, @Quequan, @Email,@Taikhoan, @Matkhau, @MaCV, @MaPB, @MaTDHV, @MaLuong)";
-                object[] parameter = new object[] {manv,tennv,sdt,gioitinh,ngaysinh,dantoc,quequan,email,tk,mk,mcv,mpb,tdhv,ml  };
+                object[] parameter = new object[] { manv, tennv, sdt, gioitinh, ngaysinh, dantoc, quequan, email, tk, mk, mcv, mpb, tdhv, ml };
                 DataProvider.Instance.ExcuteNonQuery(query, parameter);
                 guna2DataGridView1.DataSource = modify.getAllNhanvien();
                 MessageBox.Show("Thêm bản ghi thành công.");
-                 txt_manv.Clear();
+                txt_manv.Clear();
                 txt_ten.Clear();
                 txt_sdt.Clear();
                 txt_gioitinh.Clear();
-                this.ngaysinh.Value = DateTime.Now; 
+                this.ngaysinh.Value = DateTime.Now;
                 txt_dantoc.Clear();
                 txt_que.Clear();
                 txt_email.Clear();
                 txt_tk.Clear();
                 txt_mk.Clear();
-                cbx_macv.SelectedIndex = -1; 
-                cbx_mapb.SelectedIndex = -1; 
-                cbx_tdhv.SelectedIndex = -1; 
-                txt_maluong.SelectedIndex = -1; 
-                
+                cbx_macv.SelectedIndex = -1;
+                cbx_mapb.SelectedIndex = -1;
+                cbx_tdhv.SelectedIndex = -1;
+                txt_maluong.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
             }
-
 
 
         }
@@ -198,11 +209,24 @@ namespace BTL_QUANLY_NHANVIEN
         
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            
-            String manv = txt_manv.Text; 
+
+            String manv = txt_manv.Text;
             if (string.IsNullOrEmpty(manv))
             {
                 MessageBox.Show("Vui lòng chọn nhân viên để sửa.");
+                return;
+            }
+
+            String ml = txt_maluong.Text;
+
+            // Kiểm tra xem mã lương đã tồn tại hay chưa
+            string checkQuery = "SELECT MaLuong FROM NHANVIEN WHERE MaLuong = @MaLuong AND MaNV != @MaNV";
+            object[] checkParameters = { ml, manv };
+            DataTable result = DataProvider.Instance.ExcuteQuery(checkQuery, checkParameters);
+
+            if (result.Rows.Count > 0)
+            {
+                MessageBox.Show("Mã lương đã tồn tại. Vui lòng chọn mã lương khác.");
                 return;
             }
 
@@ -218,7 +242,7 @@ namespace BTL_QUANLY_NHANVIEN
             String mcv = cbx_macv.Text;
             String mpb = cbx_mapb.Text;
             String tdhv = cbx_tdhv.Text;
-            String ml = txt_maluong.Text;
+            ml = txt_maluong.Text;
 
             if (string.IsNullOrWhiteSpace(tennv) || string.IsNullOrWhiteSpace(sdt) || string.IsNullOrWhiteSpace(gioitinh) ||
                 string.IsNullOrWhiteSpace(dantoc) || string.IsNullOrWhiteSpace(quequan) || string.IsNullOrWhiteSpace(email) ||
@@ -235,8 +259,9 @@ namespace BTL_QUANLY_NHANVIEN
                                "MaCV = @MaCV, MaPB = @MaPB, MaTDHV = @MaTDHV, MaLuong = @MaLuong WHERE MaNV = @MaNV";
                 object[] parameters = { tennv, sdt, gioitinh, ngaysinh, dantoc, quequan, email, tk, mk, mcv, mpb, tdhv, ml, manv };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
-
+                
                 guna2DataGridView1.DataSource = modify.getAllNhanvien();
+                
                 MessageBox.Show("Cập nhật bản ghi thành công.");
                 txt_manv.Clear();
                 txt_ten.Clear();
@@ -415,6 +440,7 @@ namespace BTL_QUANLY_NHANVIEN
             dataTable.Columns.Add(new DataColumn("MaPB"));
             dataTable.Columns.Add(new DataColumn("MaTDHV"));
             dataTable.Columns.Add(new DataColumn("MaLuong"));
+            
 
             // Duyệt qua các hàng trong DataGridView
             foreach (DataGridViewRow dtgvRow in guna2DataGridView1.Rows)
@@ -438,7 +464,7 @@ namespace BTL_QUANLY_NHANVIEN
                 dtrow[11] = dtgvRow.Cells[11].Value;
                 dtrow[12] = dtgvRow.Cells[12].Value;
                 dtrow[13] = dtgvRow.Cells[13].Value;
-
+                
                 // Thêm hàng vào DataTable
                 dataTable.Rows.Add(dtrow);
             }

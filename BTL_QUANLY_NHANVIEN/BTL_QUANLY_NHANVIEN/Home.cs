@@ -126,7 +126,7 @@ namespace BTL_QUANLY_NHANVIEN
             {
                 data.DataSource = modify.XemDL("select * from PHONGBAN where MaPB like '%" + txt_timkiem.Text.Trim() + "%'");
             }
-            if (cbx_timkiem.Text == "Trình Độ Học Vấn")
+            if (cbx_timkiem.Text == "Trình Độ Học vấn")
             {
                 data.DataSource = modify.XemDL("select * from TRINHDOHOCVAN where MaTDHV like '%" + txt_timkiem.Text.Trim() + "%'");
             }
