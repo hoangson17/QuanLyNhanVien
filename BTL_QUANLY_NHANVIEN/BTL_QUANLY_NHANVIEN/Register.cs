@@ -51,28 +51,24 @@ namespace BTL_QUANLY_NHANVIEN
 
         private void btn_dk_Click(object sender, EventArgs e)
         {
-            string query_CountID = "SELECT COUNT(*) FROM NHANVIEN WHERE MaNV = @MaNV";
-            string manv = DataProvider.Instance.GenerateId(query_CountID, "NV");
-            string hoten = txt_hoten.Text;
             string tentk = txt_user.Text;
             string matkhau = txt_MK.Text;
             string xnmatkhau = txt_XNMK.Text;
-            string email = txt_email.Text;
-           // if (!CheckMa(manv)) { MessageBox.Show("Vui lòng nhập mã nhân viên dài 3-24 ký tự, với các ký tự chữ và số, chữ hoa và chữ thường !"); return; }
+            string email = txt_email.Text;  
             //if (!CheckAdmin(hoten)) { MessageBox.Show("Vui lòng nhập tên dài 10-24 ký tự, với các ký tự chữ hoa và chữ thường !"); return; }
             if (!CheckAccount(tentk)) { MessageBox.Show("Vui lòng nhập tên tài khoản dài 6-24 ký tự, với các ký tự chữ và số, chữ hoa và chữ thường !"); return; }
             if (!CheckAccount(matkhau)) { MessageBox.Show("Vui lòng nhập mật khẩu dài 6-24 ký tự, với các ký tự chữ và số, chữ hoa và chữ thường !"); return; }
             if (xnmatkhau != matkhau) { MessageBox.Show("Vui lòng xác nhận mật khẩu chính xác !!"); return; }
             if (!CheckEmail(email)) { MessageBox.Show("Vui lòng nhập đúng định dạng Email !!"); return; }
-            if (modify.TaiKhoans("Select * from NHANVIEN where Email = '" + email + "' ").Count != 0)
+            if (modify.TaiKhoans("Select * from DANGNHAP where Email = '" + email + "' ").Count != 0)
             {
                 MessageBox.Show("Email này đã được đăng ký vui lòng sử dụng Email khác !!!");
                 return;
             }
             try
             {
-                string query = "INSERT INTO NHANVIEN(MaNV,Hoten,Email,Taikhoan,Matkhau) VALUES (@MaNV, @Hoten, @Email, @Taikhoan, @Matkhau)";
-                object[] parameter = new object[] { manv,hoten,email,tentk,matkhau};
+                string query = "INSERT INTO DANGNHAP(TaiKhoan,MatKhau,Email) VALUES ( @TaiKhoan, @MatKhau,@Email)";
+                object[] parameter = new object[] {tentk,matkhau, email};
                 DataProvider.Instance.ExcuteNonQuery(query, parameter);
                 MessageBox.Show("Đăng kí thành công !!! ");
                 btn_thoat_Click(sender, e);

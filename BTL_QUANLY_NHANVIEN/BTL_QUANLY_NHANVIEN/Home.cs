@@ -107,8 +107,6 @@ namespace BTL_QUANLY_NHANVIEN
             if (cbx_timkiem.Text == "Nhân Viên")
             {
                 data.DataSource = modify.XemDL("select * from NHANVIEN where MaNV like '%" + txt_timkiem.Text.Trim() + "%'");
-                data.Columns["Matkhau"].Visible = false;
-                data.Columns["Taikhoan"].Visible = false;
             }
             if (cbx_timkiem.Text == "Chức Vụ")
             {
@@ -145,6 +143,13 @@ namespace BTL_QUANLY_NHANVIEN
         private void txt_timkiem_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_capTK_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Register rg = new Register();
+            rg.ShowDialog();
         }
     }
 }

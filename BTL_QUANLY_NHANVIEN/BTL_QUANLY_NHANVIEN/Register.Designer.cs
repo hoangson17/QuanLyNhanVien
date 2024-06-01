@@ -43,8 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_hoten = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,11 +57,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SVN-Bango", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(149, 25);
+            this.label1.Location = new System.Drawing.Point(89, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 41);
+            this.label1.Size = new System.Drawing.Size(284, 41);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Đăng Kí";
+            this.label1.Text = "Cấp Tài Khoản";
             // 
             // pictureBox1
             // 
@@ -87,7 +85,7 @@
             this.txt_MK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_MK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_MK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_MK.Location = new System.Drawing.Point(436, 195);
+            this.txt_MK.Location = new System.Drawing.Point(436, 160);
             this.txt_MK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_MK.Name = "txt_MK";
             this.txt_MK.PasswordChar = '\0';
@@ -108,7 +106,7 @@
             this.txt_XNMK.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_XNMK.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_XNMK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_XNMK.Location = new System.Drawing.Point(436, 255);
+            this.txt_XNMK.Location = new System.Drawing.Point(436, 238);
             this.txt_XNMK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_XNMK.Name = "txt_XNMK";
             this.txt_XNMK.PasswordChar = '\0';
@@ -129,7 +127,7 @@
             this.txt_user.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txt_user.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txt_user.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_user.Location = new System.Drawing.Point(436, 135);
+            this.txt_user.Location = new System.Drawing.Point(436, 86);
             this.txt_user.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_user.Name = "txt_user";
             this.txt_user.PasswordChar = '\0';
@@ -198,7 +196,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 6F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(442, 117);
+            this.label2.Location = new System.Drawing.Point(442, 68);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 12);
             this.label2.TabIndex = 8;
@@ -209,7 +207,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 6F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(442, 177);
+            this.label3.Location = new System.Drawing.Point(442, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 12);
             this.label3.TabIndex = 9;
@@ -220,7 +218,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 6F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(442, 237);
+            this.label4.Location = new System.Drawing.Point(442, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 12);
             this.label4.TabIndex = 10;
@@ -237,45 +235,11 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "EMAIL";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 6F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(442, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 12);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Họ Tên";
-            // 
-            // txt_hoten
-            // 
-            this.txt_hoten.BorderRadius = 15;
-            this.txt_hoten.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_hoten.DefaultText = "";
-            this.txt_hoten.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txt_hoten.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txt_hoten.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_hoten.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txt_hoten.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_hoten.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txt_hoten.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_hoten.Location = new System.Drawing.Point(436, 75);
-            this.txt_hoten.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_hoten.Name = "txt_hoten";
-            this.txt_hoten.PasswordChar = '\0';
-            this.txt_hoten.PlaceholderText = "";
-            this.txt_hoten.SelectedText = "";
-            this.txt_hoten.Size = new System.Drawing.Size(294, 38);
-            this.txt_hoten.TabIndex = 12;
-            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 457);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_hoten);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -314,7 +278,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2TextBox txt_hoten;
     }
 }

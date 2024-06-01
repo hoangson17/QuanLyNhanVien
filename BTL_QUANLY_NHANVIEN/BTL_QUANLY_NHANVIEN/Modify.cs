@@ -29,7 +29,7 @@ namespace BTL_QUANLY_NHANVIEN
                 dataReader = sqlCommand.ExecuteReader();
                 while (dataReader.Read())
                 {
-                    TaiKhoans.Add(new loginClass(dataReader.GetString(8), dataReader.GetString(9)));
+                    TaiKhoans.Add(new loginClass(dataReader.GetString(0), dataReader.GetString(1)));
                 }
 
 

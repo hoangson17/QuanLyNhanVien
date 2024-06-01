@@ -32,12 +32,7 @@ namespace BTL_QUANLY_NHANVIEN
             Application.Exit();
         }
         Modify modify = new Modify();
-        private void linkLabel_DangKi_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Visible = false;
-            Register register = new Register();
-            register.ShowDialog();
-        }
+
 
         private void linkLabel_QuenMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -71,7 +66,7 @@ namespace BTL_QUANLY_NHANVIEN
             else if (matkhau.Trim() == "") { MessageBox.Show("Vui lòng nhập mật khẩu !!"); }
             else
             {
-                string query = "Select * from NHANVIEN where Taikhoan = '" + tentk + "' and Matkhau = '" + matkhau + "'";
+                string query = "Select * from DANGNHAP where TaiKhoan = '" + tentk + "' and MatKhau = '" + matkhau + "'";
                 if (modify.TaiKhoans(query).Count != 0)
                 {
                     this.Visible = false;

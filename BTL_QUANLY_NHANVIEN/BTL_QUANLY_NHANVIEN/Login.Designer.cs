@@ -37,7 +37,6 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txt_user = new Guna.UI2.WinForms.Guna2TextBox();
             this.txt_password = new Guna.UI2.WinForms.Guna2TextBox();
-            this.linkLabel_DangKi = new System.Windows.Forms.LinkLabel();
             this.linkLabel_QuenMK = new System.Windows.Forms.LinkLabel();
             this.btn_login = new Guna.UI2.WinForms.Guna2Button();
             this.btn_thoat = new Guna.UI2.WinForms.Guna2Button();
@@ -142,25 +141,12 @@
             this.txt_password.Size = new System.Drawing.Size(263, 59);
             this.txt_password.TabIndex = 5;
             // 
-            // linkLabel_DangKi
-            // 
-            this.linkLabel_DangKi.AutoSize = true;
-            this.linkLabel_DangKi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel_DangKi.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel_DangKi.Location = new System.Drawing.Point(591, 436);
-            this.linkLabel_DangKi.Name = "linkLabel_DangKi";
-            this.linkLabel_DangKi.Size = new System.Drawing.Size(60, 18);
-            this.linkLabel_DangKi.TabIndex = 6;
-            this.linkLabel_DangKi.TabStop = true;
-            this.linkLabel_DangKi.Text = "Đăng Kí";
-            this.linkLabel_DangKi.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_DangKi_LinkClicked);
-            // 
             // linkLabel_QuenMK
             // 
             this.linkLabel_QuenMK.AutoSize = true;
             this.linkLabel_QuenMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel_QuenMK.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel_QuenMK.Location = new System.Drawing.Point(851, 436);
+            this.linkLabel_QuenMK.Location = new System.Drawing.Point(841, 448);
             this.linkLabel_QuenMK.Name = "linkLabel_QuenMK";
             this.linkLabel_QuenMK.Size = new System.Drawing.Size(111, 18);
             this.linkLabel_QuenMK.TabIndex = 7;
@@ -205,7 +191,7 @@
             // cb_luu_mk
             // 
             this.cb_luu_mk.AutoSize = true;
-            this.cb_luu_mk.Location = new System.Drawing.Point(594, 397);
+            this.cb_luu_mk.Location = new System.Drawing.Point(596, 396);
             this.cb_luu_mk.Name = "cb_luu_mk";
             this.cb_luu_mk.Size = new System.Drawing.Size(107, 20);
             this.cb_luu_mk.TabIndex = 10;
@@ -216,7 +202,7 @@
             // cb_hien_mk
             // 
             this.cb_hien_mk.AutoSize = true;
-            this.cb_hien_mk.Location = new System.Drawing.Point(832, 397);
+            this.cb_hien_mk.Location = new System.Drawing.Point(832, 396);
             this.cb_hien_mk.Name = "cb_hien_mk";
             this.cb_hien_mk.Size = new System.Drawing.Size(130, 20);
             this.cb_hien_mk.TabIndex = 11;
@@ -234,7 +220,6 @@
             this.Controls.Add(this.btn_thoat);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.linkLabel_QuenMK);
-            this.Controls.Add(this.linkLabel_DangKi);
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_user);
             this.Controls.Add(this.guna2CirclePictureBox1);
@@ -264,7 +249,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.LinkLabel linkLabel_QuenMK;
-        private System.Windows.Forms.LinkLabel linkLabel_DangKi;
         private Guna.UI2.WinForms.Guna2Button btn_thoat;
         private Guna.UI2.WinForms.Guna2Button btn_login;
         private System.Windows.Forms.CheckBox cb_hien_mk;

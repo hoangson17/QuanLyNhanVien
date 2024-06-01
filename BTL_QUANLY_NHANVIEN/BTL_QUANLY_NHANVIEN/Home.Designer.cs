@@ -36,6 +36,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btn_capTK = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton13 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_phongban = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btn_hopdong = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -69,6 +70,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Navy;
+            this.guna2Panel1.Controls.Add(this.btn_capTK);
             this.guna2Panel1.Controls.Add(this.guna2GradientButton13);
             this.guna2Panel1.Controls.Add(this.btn_phongban);
             this.guna2Panel1.Controls.Add(this.btn_hopdong);
@@ -80,6 +82,25 @@
             this.guna2Panel1.Size = new System.Drawing.Size(231, 691);
             this.guna2Panel1.TabIndex = 2;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btn_capTK
+            // 
+            this.btn_capTK.BackColor = System.Drawing.Color.LightGray;
+            this.btn_capTK.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_capTK.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_capTK.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_capTK.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_capTK.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_capTK.FillColor = System.Drawing.Color.Navy;
+            this.btn_capTK.FillColor2 = System.Drawing.Color.Navy;
+            this.btn_capTK.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.btn_capTK.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_capTK.Location = new System.Drawing.Point(8, 475);
+            this.btn_capTK.Name = "btn_capTK";
+            this.btn_capTK.Size = new System.Drawing.Size(240, 77);
+            this.btn_capTK.TabIndex = 8;
+            this.btn_capTK.Text = "Cấp Tài Khoản ";
+            this.btn_capTK.Click += new System.EventHandler(this.btn_capTK_Click);
             // 
             // guna2GradientButton13
             // 
@@ -93,7 +114,7 @@
             this.guna2GradientButton13.FillColor2 = System.Drawing.Color.Navy;
             this.guna2GradientButton13.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.guna2GradientButton13.ForeColor = System.Drawing.SystemColors.Control;
-            this.guna2GradientButton13.Location = new System.Drawing.Point(3, 392);
+            this.guna2GradientButton13.Location = new System.Drawing.Point(13, 392);
             this.guna2GradientButton13.Name = "guna2GradientButton13";
             this.guna2GradientButton13.Size = new System.Drawing.Size(240, 77);
             this.guna2GradientButton13.TabIndex = 7;
@@ -112,7 +133,7 @@
             this.btn_phongban.FillColor2 = System.Drawing.Color.Navy;
             this.btn_phongban.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_phongban.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_phongban.Location = new System.Drawing.Point(3, 314);
+            this.btn_phongban.Location = new System.Drawing.Point(0, 314);
             this.btn_phongban.Name = "btn_phongban";
             this.btn_phongban.Size = new System.Drawing.Size(240, 78);
             this.btn_phongban.TabIndex = 6;
@@ -131,7 +152,7 @@
             this.btn_hopdong.FillColor2 = System.Drawing.Color.Navy;
             this.btn_hopdong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_hopdong.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_hopdong.Location = new System.Drawing.Point(2, 161);
+            this.btn_hopdong.Location = new System.Drawing.Point(-1, 161);
             this.btn_hopdong.Name = "btn_hopdong";
             this.btn_hopdong.Size = new System.Drawing.Size(243, 79);
             this.btn_hopdong.TabIndex = 4;
@@ -150,7 +171,7 @@
             this.btn_chucvu.FillColor2 = System.Drawing.Color.Navy;
             this.btn_chucvu.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_chucvu.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_chucvu.Location = new System.Drawing.Point(2, 83);
+            this.btn_chucvu.Location = new System.Drawing.Point(-1, 83);
             this.btn_chucvu.Name = "btn_chucvu";
             this.btn_chucvu.Size = new System.Drawing.Size(243, 78);
             this.btn_chucvu.TabIndex = 3;
@@ -169,7 +190,7 @@
             this.btn_nhanvien.FillColor2 = System.Drawing.Color.Navy;
             this.btn_nhanvien.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_nhanvien.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_nhanvien.Location = new System.Drawing.Point(3, 9);
+            this.btn_nhanvien.Location = new System.Drawing.Point(0, 9);
             this.btn_nhanvien.Name = "btn_nhanvien";
             this.btn_nhanvien.Size = new System.Drawing.Size(240, 74);
             this.btn_nhanvien.TabIndex = 1;
@@ -188,7 +209,7 @@
             this.btn_luong.FillColor2 = System.Drawing.Color.Navy;
             this.btn_luong.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.btn_luong.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_luong.Location = new System.Drawing.Point(-4, 240);
+            this.btn_luong.Location = new System.Drawing.Point(-7, 240);
             this.btn_luong.Name = "btn_luong";
             this.btn_luong.Size = new System.Drawing.Size(255, 74);
             this.btn_luong.TabIndex = 5;
@@ -427,5 +448,6 @@
         private Guna.UI2.WinForms.Guna2Button btn_timkiem;
         private Guna.UI2.WinForms.Guna2TextBox txt_timkiem;
         private Guna.UI2.WinForms.Guna2DataGridView data;
+        private Guna.UI2.WinForms.Guna2GradientButton btn_capTK;
     }
 }

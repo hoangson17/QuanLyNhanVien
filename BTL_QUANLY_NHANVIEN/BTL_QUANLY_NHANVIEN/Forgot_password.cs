@@ -37,7 +37,7 @@ namespace BTL_QUANLY_NHANVIEN
                 MessageBox.Show("Xác Minh Thành Công");
 
                 string email = txt_email.Text;
-                string query = "SELECT * FROM NHANVIEN WHERE Email = '" + email + "'";
+                string query = "SELECT * FROM DANGNHAP WHERE Email = '" + email + "'";
                 List<loginClass> taiKhoans = modify.TaiKhoans(query);
 
                 if (taiKhoans.Count != 0)

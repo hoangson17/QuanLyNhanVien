@@ -29,9 +29,6 @@ namespace BTL_QUANLY_NHANVIEN
             DataUI.Columns.Add("NgaySinh", typeof(DateTime));
             DataUI.Columns.Add("Dantoc", typeof(string));
             DataUI.Columns.Add("Quequan", typeof(string));
-            DataUI.Columns.Add("Email", typeof(string));
-            DataUI.Columns.Add("Taikhoan", typeof(string));
-            DataUI.Columns.Add("Matkhau", typeof(string));
             DataUI.Columns.Add("MaCV", typeof(string));
             DataUI.Columns.Add("MaPB", typeof(string));
             DataUI.Columns.Add("MaTDHV", typeof(string));
@@ -57,9 +54,6 @@ namespace BTL_QUANLY_NHANVIEN
                 newRow["NgaySinh"] = DtNhanVien.Rows[i]["NgaySinh"];
                 newRow["Dantoc"] = DtNhanVien.Rows[i]["Dantoc"];
                 newRow["Quequan"] = DtNhanVien.Rows[i]["Quequan"];
-                newRow["Email"] = DtNhanVien.Rows[i]["Email"];
-                newRow["Taikhoan"] = DtNhanVien.Rows[i]["Taikhoan"];
-                newRow["Matkhau"] = DtNhanVien.Rows[i]["Matkhau"];
                 newRow["MaCV"] = DtNhanVien.Rows[i]["MaCV"];
                 newRow["MaPB"] = DtNhanVien.Rows[i]["MaPB"];
                 newRow["MaTDHV"] = DtNhanVien.Rows[i]["MaTDHV"];
@@ -71,8 +65,6 @@ namespace BTL_QUANLY_NHANVIEN
             
 
             guna2DataGridView1.DataSource = DataUI;
-            guna2DataGridView1.Columns["Matkhau"].Visible = false;
-            guna2DataGridView1.Columns["Taikhoan"].Visible = false;
         }
 
 
@@ -134,15 +126,12 @@ namespace BTL_QUANLY_NHANVIEN
             DateTime ngaysinh = this.ngaysinh.Value;
             String dantoc = txt_dantoc.Text;
             String quequan = txt_que.Text;
-            String email = txt_email.Text;
-            String tk = txt_tk.Text;
-            String mk = txt_mk.Text;
             String mcv = cbx_macv.Text;
             String mpb = cbx_mapb.Text;
             String tdhv = cbx_tdhv.Text;
             String ml = txt_maluong.Text;
 
-            if (string.IsNullOrWhiteSpace(tennv) || string.IsNullOrWhiteSpace(sdt) || string.IsNullOrWhiteSpace(gioitinh) || string.IsNullOrWhiteSpace(dantoc) || string.IsNullOrWhiteSpace(quequan) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(mk) || string.IsNullOrWhiteSpace(tk))
+            if (string.IsNullOrWhiteSpace(tennv) || string.IsNullOrWhiteSpace(sdt) || string.IsNullOrWhiteSpace(gioitinh) || string.IsNullOrWhiteSpace(dantoc) || string.IsNullOrWhiteSpace(quequan) )
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
                 return;
@@ -163,8 +152,8 @@ namespace BTL_QUANLY_NHANVIEN
 
                 string queryCountId = "SELECT COUNT(*) FROM NHANVIEN WHERE MaNV = @MaNV";
                 string manv = DataProvider.Instance.GenerateId(queryCountId, "NV");
-                string query = "INSERT INTO NHANVIEN(MaNV, Hoten, SDT, Gioitinh, NgaySinh, Dantoc, Quequan, Email, Taikhoan, Matkhau, MaCV, MaPB, MaTDHV, MaLuong) VALUES (@MaNV, @Hoten, @SDT, @Gioitinh, @NgaySinh, @Dantoc, @Quequan, @Email,@Taikhoan, @Matkhau, @MaCV, @MaPB, @MaTDHV, @MaLuong)";
-                object[] parameter = new object[] { manv, tennv, sdt, gioitinh, ngaysinh, dantoc, quequan, email, tk, mk, mcv, mpb, tdhv, ml };
+                string query = "INSERT INTO NHANVIEN(MaNV, Hoten, SDT, Gioitinh, NgaySinh, Dantoc, Quequan, MaCV, MaPB, MaTDHV, MaLuong) VALUES (@MaNV, @Hoten, @SDT, @Gioitinh, @NgaySinh, @Dantoc, @Quequan, @MaCV, @MaPB, @MaTDHV, @MaLuong)";
+                object[] parameter = new object[] { manv, tennv, sdt, gioitinh, ngaysinh, dantoc, quequan, mcv, mpb, tdhv, ml };
                 DataProvider.Instance.ExcuteNonQuery(query, parameter);
                 guna2DataGridView1.DataSource = modify.getAllNhanvien();
                 MessageBox.Show("Thêm bản ghi thành công.");
@@ -175,9 +164,6 @@ namespace BTL_QUANLY_NHANVIEN
                 this.ngaysinh.Value = DateTime.Now;
                 txt_dantoc.Clear();
                 txt_que.Clear();
-                txt_email.Clear();
-                txt_tk.Clear();
-                txt_mk.Clear();
                 cbx_macv.SelectedIndex = -1;
                 cbx_mapb.SelectedIndex = -1;
                 cbx_tdhv.SelectedIndex = -1;
@@ -202,8 +188,6 @@ namespace BTL_QUANLY_NHANVIEN
             ngaysinh.Text = guna2DataGridView1.Rows[i].Cells[4].Value.ToString();
             txt_dantoc.Text = guna2DataGridView1.Rows[i].Cells[5].Value.ToString();
             txt_que.Text = guna2DataGridView1.Rows[i].Cells[6].Value.ToString();
-            txt_email.Text = guna2DataGridView1.Rows[i].Cells[7].Value.ToString();
-            txt_tk.Text = guna2DataGridView1.Rows[i].Cells[8].Value.ToString();
 
         }
         
@@ -236,17 +220,13 @@ namespace BTL_QUANLY_NHANVIEN
             DateTime ngaysinh = this.ngaysinh.Value;
             String dantoc = txt_dantoc.Text;
             String quequan = txt_que.Text;
-            String email = txt_email.Text;
-            String tk = txt_tk.Text;
-            String mk = txt_mk.Text;
             String mcv = cbx_macv.Text;
             String mpb = cbx_mapb.Text;
             String tdhv = cbx_tdhv.Text;
             ml = txt_maluong.Text;
 
             if (string.IsNullOrWhiteSpace(tennv) || string.IsNullOrWhiteSpace(sdt) || string.IsNullOrWhiteSpace(gioitinh) ||
-                string.IsNullOrWhiteSpace(dantoc) || string.IsNullOrWhiteSpace(quequan) || string.IsNullOrWhiteSpace(email) ||
-                string.IsNullOrWhiteSpace(tk) || string.IsNullOrWhiteSpace(mk))
+                string.IsNullOrWhiteSpace(dantoc) || string.IsNullOrWhiteSpace(quequan) )
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin.");
                 return;
@@ -255,9 +235,9 @@ namespace BTL_QUANLY_NHANVIEN
             try
             {
                 string query = "UPDATE NHANVIEN SET Hoten = @Hoten, SDT = @SDT, Gioitinh = @Gioitinh, NgaySinh = @NgaySinh, " +
-                               "Dantoc = @Dantoc, Quequan = @Quequan, Email = @Email, Taikhoan = @Taikhoan, Matkhau = @Matkhau, " +
+                               "Dantoc = @Dantoc, Quequan = @Quequan,  " +
                                "MaCV = @MaCV, MaPB = @MaPB, MaTDHV = @MaTDHV, MaLuong = @MaLuong WHERE MaNV = @MaNV";
-                object[] parameters = { tennv, sdt, gioitinh, ngaysinh, dantoc, quequan, email, tk, mk, mcv, mpb, tdhv, ml, manv };
+                object[] parameters = { tennv, sdt, gioitinh, ngaysinh, dantoc, quequan, mcv, mpb, tdhv, ml, manv };
                 DataProvider.Instance.ExcuteNonQuery(query, parameters);
                 
                 guna2DataGridView1.DataSource = modify.getAllNhanvien();
@@ -270,9 +250,6 @@ namespace BTL_QUANLY_NHANVIEN
                 this.ngaysinh.Value = DateTime.Now;
                 txt_dantoc.Clear();
                 txt_que.Clear();
-                txt_email.Clear();
-                txt_tk.Clear();
-                txt_mk.Clear();
                 cbx_macv.SelectedIndex = -1;
                 cbx_mapb.SelectedIndex = -1;
                 cbx_tdhv.SelectedIndex = -1;
@@ -313,9 +290,6 @@ namespace BTL_QUANLY_NHANVIEN
                 ngaysinh.Value = DateTime.Now; 
                 txt_dantoc.Clear();
                 txt_que.Clear();
-                txt_email.Clear();
-                txt_tk.Clear();
-                txt_mk.Clear();
                 cbx_macv.SelectedIndex = -1; 
                 cbx_mapb.SelectedIndex = -1; 
                 cbx_tdhv.SelectedIndex = -1; 
@@ -358,13 +332,12 @@ namespace BTL_QUANLY_NHANVIEN
             head.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
             // Tạo tiêu đề cột
-            string[] columnNames = { "Mã Nhân Viên", "Họ Tên", "Số Điện Thoại", "Giới Tính", "Ngày Sinh", "Dân Tộc", "Quê Quán", "Email", "Mã Công Việc", "Mã Phòng Ban", "Mã Trình Độ", "Mã Lương" };
+            string[] columnNames = { "Mã Nhân Viên", "Họ Tên", "Số Điện Thoại", "Giới Tính", "Ngày Sinh", "Dân Tộc", "Quê Quán", "Mã Công Việc", "Mã Phòng Ban", "Mã Trình Độ", "Mã Lương", "Tổng Lương" };
             int colIndex = 1;
             foreach (string colName in columnNames)
             {
                 Microsoft.Office.Interop.Excel.Range col = oSheet.Cells[3, colIndex];
                 col.Value = colName;
-                col.ColumnWidth = colName == "Email" ? 30 : 12; // Thiết lập độ rộng cột "Email" là 30
                 colIndex++;
             }
 
@@ -377,18 +350,23 @@ namespace BTL_QUANLY_NHANVIEN
             rowHead.Interior.ColorIndex = 6;
             rowHead.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
 
+            // Tăng độ rộng các cột
+            for (int i = 1; i <= columnNames.Length; i++)
+            {
+                oSheet.Columns[i].ColumnWidth = 15; // có thể điều chỉnh giá trị này để phù hợp với nhu cầu 
+            }
+
+
             // Tạo mảng theo database
             object[,] arr = new object[dataTable.Rows.Count, columnNames.Length];
 
-            // Chuyển dữ liệu từ dataTable vào mảng đối tượng, bỏ qua cột "Tài Khoản" và "Mật Khẩu"
+            // Chuyển dữ liệu từ dataTable vào mảng đối tượng
             for (int row = 0; row < dataTable.Rows.Count; row++)
             {
                 DataRow dataRow = dataTable.Rows[row];
                 int colArrayIndex = 0;
                 for (int col = 0; col < dataTable.Columns.Count; col++)
                 {
-                    // Bỏ qua cột "Tài Khoản" và "Mật Khẩu" (giả sử cột "Tài Khoản" là cột thứ 9 và "Mật Khẩu" là cột thứ 10)
-                    if (col == 8 || col == 9) continue;
                     arr[row, colArrayIndex] = dataRow[col];
                     colArrayIndex++;
                 }
@@ -433,14 +411,11 @@ namespace BTL_QUANLY_NHANVIEN
             dataTable.Columns.Add(new DataColumn("NgaySinh"));
             dataTable.Columns.Add(new DataColumn("Dantoc"));
             dataTable.Columns.Add(new DataColumn("Quequan"));
-            dataTable.Columns.Add(new DataColumn("Email"));
-            dataTable.Columns.Add(new DataColumn("Taikhoan"));
-            dataTable.Columns.Add(new DataColumn("Matkhau"));
             dataTable.Columns.Add(new DataColumn("MaCV"));
             dataTable.Columns.Add(new DataColumn("MaPB"));
             dataTable.Columns.Add(new DataColumn("MaTDHV"));
             dataTable.Columns.Add(new DataColumn("MaLuong"));
-            
+            dataTable.Columns.Add(new DataColumn("TongLuong"));
 
             // Duyệt qua các hàng trong DataGridView
             foreach (DataGridViewRow dtgvRow in guna2DataGridView1.Rows)
@@ -462,9 +437,6 @@ namespace BTL_QUANLY_NHANVIEN
                 dtrow[9] = dtgvRow.Cells[9].Value;
                 dtrow[10] = dtgvRow.Cells[10].Value;
                 dtrow[11] = dtgvRow.Cells[11].Value;
-                dtrow[12] = dtgvRow.Cells[12].Value;
-                dtrow[13] = dtgvRow.Cells[13].Value;
-                
                 // Thêm hàng vào DataTable
                 dataTable.Rows.Add(dtrow);
             }
