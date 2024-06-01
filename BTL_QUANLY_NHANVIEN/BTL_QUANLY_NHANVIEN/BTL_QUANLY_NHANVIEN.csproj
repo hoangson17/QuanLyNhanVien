@@ -85,6 +85,12 @@
     <Compile Include="Forgot_password.Designer.cs">
       <DependentUpon>Forgot_password.cs</DependentUpon>
     </Compile>
+    <Compile Include="doimk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="doimk.Designer.cs">
+      <DependentUpon>doimk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </Compile>
     <EmbeddedResource Include="Chucvu.resx">
       <DependentUpon>Chucvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="doimk.resx">
+      <DependentUpon>doimk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forgot_password.resx">
       <DependentUpon>Forgot_password.cs</DependentUpon>
@@ -208,6 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\brg_login.jpg" />
+    <None Include="Resources\search_2788134.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

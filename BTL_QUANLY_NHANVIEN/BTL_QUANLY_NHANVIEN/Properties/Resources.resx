@@ -121,4 +121,7 @@
   <data name="Lovepik_com-450044673-Vector Home Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lovepik_com-450044673-Vector Home Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="search_2788134" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_2788134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

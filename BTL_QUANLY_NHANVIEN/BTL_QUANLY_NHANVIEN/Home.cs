@@ -151,5 +151,13 @@ namespace BTL_QUANLY_NHANVIEN
             Register rg = new Register();
             rg.ShowDialog();
         }
+
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            doimk dmk = new doimk();
+            dmk.ShowDialog();
+        }
     }
 }

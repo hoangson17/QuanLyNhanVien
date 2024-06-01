@@ -108,5 +108,13 @@ namespace BTL_QUANLY_NHANVIEN
         {
 
         }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Close();
+            doimk dmk = new doimk();
+            dmk.ShowDialog();
+        }
+
     }
 }

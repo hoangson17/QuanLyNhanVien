@@ -40,3 +40,4 @@ D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANL
 D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.csproj.CopyComplete
 D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.exe
 D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.pdb
+D:\gittt\QuanLyNhanVien2-main\QuanLyNhanVien2-main\BTL_QUANLY_NHANVIEN\BTL_QUANLY_NHANVIEN\obj\Debug\BTL_QUANLY_NHANVIEN.doimk.resources

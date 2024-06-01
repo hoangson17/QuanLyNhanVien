@@ -69,5 +69,15 @@ namespace BTL_QUANLY_NHANVIEN.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_2788134 {
+            get {
+                object obj = ResourceManager.GetObject("search_2788134", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
